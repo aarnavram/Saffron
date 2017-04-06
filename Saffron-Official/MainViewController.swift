@@ -21,6 +21,11 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    
 
     /*
     // MARK: - Navigation

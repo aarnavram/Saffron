@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17883A78ABB5E673829EA98D /* Pods_Saffron_Official.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D45CE52F3589A1ABE5C2530 /* Pods_Saffron_Official.framework */; };
 		A0A89C061E95C1540058EFAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A89C051E95C1540058EFAB /* AppDelegate.swift */; };
 		A0A89C081E95C1540058EFAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A89C071E95C1540058EFAB /* ViewController.swift */; };
 		A0A89C0B1E95C1540058EFAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A89C091E95C1540058EFAB /* Main.storyboard */; };
 		A0A89C0D1E95C1540058EFAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0A89C0C1E95C1540058EFAB /* Assets.xcassets */; };
 		A0A89C101E95C1540058EFAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A89C0E1E95C1540058EFAB /* LaunchScreen.storyboard */; };
+		A0A89C181E95C1FA0058EFAB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A89C171E95C1FA0058EFAB /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F629D39F0324AB258A75644 /* Pods-Saffron-Official.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saffron-Official.release.xcconfig"; path = "Pods/Target Support Files/Pods-Saffron-Official/Pods-Saffron-Official.release.xcconfig"; sourceTree = "<group>"; };
+		5A5965187FFF41233491DE63 /* Pods-Saffron-Official.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saffron-Official.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Saffron-Official/Pods-Saffron-Official.debug.xcconfig"; sourceTree = "<group>"; };
+		9D45CE52F3589A1ABE5C2530 /* Pods_Saffron_Official.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Saffron_Official.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A89C021E95C1540058EFAB /* Saffron-Official.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Saffron-Official.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A89C051E95C1540058EFAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0A89C071E95C1540058EFAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +27,7 @@
 		A0A89C0C1E95C1540058EFAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0A89C0F1E95C1540058EFAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0A89C111E95C1540058EFAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0A89C171E95C1FA0058EFAB /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17883A78ABB5E673829EA98D /* Pods_Saffron_Official.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55110B9AB5C4700188FD434A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5A5965187FFF41233491DE63 /* Pods-Saffron-Official.debug.xcconfig */,
+				2F629D39F0324AB258A75644 /* Pods-Saffron-Official.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A0A89BF91E95C1540058EFAB = {
 			isa = PBXGroup;
 			children = (
 				A0A89C041E95C1540058EFAB /* Saffron-Official */,
 				A0A89C031E95C1540058EFAB /* Products */,
+				55110B9AB5C4700188FD434A /* Pods */,
+				FBF3D41A97551DDA2BC28258 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +78,17 @@
 				A0A89C0C1E95C1540058EFAB /* Assets.xcassets */,
 				A0A89C0E1E95C1540058EFAB /* LaunchScreen.storyboard */,
 				A0A89C111E95C1540058EFAB /* Info.plist */,
+				A0A89C171E95C1FA0058EFAB /* MainViewController.swift */,
 			);
 			path = "Saffron-Official";
+			sourceTree = "<group>";
+		};
+		FBF3D41A97551DDA2BC28258 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D45CE52F3589A1ABE5C2530 /* Pods_Saffron_Official.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0A89C141E95C1540058EFAB /* Build configuration list for PBXNativeTarget "Saffron-Official" */;
 			buildPhases = (
+				E788807839EE373A92AD058D /* [CP] Check Pods Manifest.lock */,
 				A0A89BFE1E95C1540058EFAB /* Sources */,
 				A0A89BFF1E95C1540058EFAB /* Frameworks */,
 				A0A89C001E95C1540058EFAB /* Resources */,
+				C983DD98587E290F97D39B54 /* [CP] Embed Pods Frameworks */,
+				08F7CBD37427B72195E530CE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,11 +162,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		08F7CBD37427B72195E530CE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Saffron-Official/Pods-Saffron-Official-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C983DD98587E290F97D39B54 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Saffron-Official/Pods-Saffron-Official-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E788807839EE373A92AD058D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A0A89BFE1E95C1540058EFAB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0A89C181E95C1FA0058EFAB /* MainViewController.swift in Sources */,
 				A0A89C081E95C1540058EFAB /* ViewController.swift in Sources */,
 				A0A89C061E95C1540058EFAB /* AppDelegate.swift in Sources */,
 			);
@@ -257,10 +336,12 @@
 		};
 		A0A89C151E95C1540058EFAB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A5965187FFF41233491DE63 /* Pods-Saffron-Official.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = MLFV6FC582;
 				INFOPLIST_FILE = "Saffron-Official/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aarnavram.Saffron-Official";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -270,10 +351,12 @@
 		};
 		A0A89C161E95C1540058EFAB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F629D39F0324AB258A75644 /* Pods-Saffron-Official.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = MLFV6FC582;
 				INFOPLIST_FILE = "Saffron-Official/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aarnavram.Saffron-Official";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -300,6 +383,7 @@
 				A0A89C161E95C1540058EFAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

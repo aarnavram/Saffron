@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-Saffron-Official.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RazzleDazzle.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SCLAlertView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>80DB9727819B5A3B6B2F7A0828F20673</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A9B6DC61C36B76CF73A95A17EEB56AB9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BF57DC711C409EF82DA98FEA17CD8FD9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FA285B527E2AB3D18B0FD9A3AF337829</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

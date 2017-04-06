@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0820"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A0A89C011E95C1540058EFAB"
-               BuildableName = "Saffron-Official.app"
-               BlueprintName = "Saffron-Official"
-               ReferencedContainer = "container:Saffron-Official.xcodeproj">
+               BlueprintIdentifier = "BF57DC711C409EF82DA98FEA17CD8FD9"
+               BuildableName = "Pods_Saffron_Official.framework"
+               BlueprintName = "Pods-Saffron-Official"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,15 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A0A89C011E95C1540058EFAB"
-            BuildableName = "Saffron-Official.app"
-            BlueprintName = "Saffron-Official"
-            ReferencedContainer = "container:Saffron-Official.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -51,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A0A89C011E95C1540058EFAB"
-            BuildableName = "Saffron-Official.app"
-            BlueprintName = "Saffron-Official"
-            ReferencedContainer = "container:Saffron-Official.xcodeproj">
+            BlueprintIdentifier = "BF57DC711C409EF82DA98FEA17CD8FD9"
+            BuildableName = "Pods_Saffron_Official.framework"
+            BlueprintName = "Pods-Saffron-Official"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -70,16 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A0A89C011E95C1540058EFAB"
-            BuildableName = "Saffron-Official.app"
-            BlueprintName = "Saffron-Official"
-            ReferencedContainer = "container:Saffron-Official.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

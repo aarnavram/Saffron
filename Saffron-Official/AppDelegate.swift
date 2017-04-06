@@ -16,6 +16,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+            
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let userDef = UserDefaults.standard
+        
+        if let launchView = userDef.string(forKey: "vc") {
+            if launchView == "appPage" {
+                let initialViewController = storyboard.instantiateViewController(withIdentifier: "appPage")
+                self.window?.rootViewController = initialViewController
+                self.window?.makeKeyAndVisible()
+            } else {
+                let initialViewController = storyboard.instantiateViewController(withIdentifier: "disclaimerPage")
+                self.window?.rootViewController = initialViewController
+                self.window?.makeKeyAndVisible()
+            }
+        } else {
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "disclaimerPage")
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        }
+        
         return true
     }
 

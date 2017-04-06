@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="disclaimerPage" id="BYZ-38-t0r" customClass="ViewController" customModule="Saffron_Official" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,9 +22,86 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <segue destination="MYJ-fd-AeV" kind="presentation" identifier="seg" id="9j5-5t-lBq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Main View Controller-->
+        <scene sceneID="Lm6-IM-Zgn">
+            <objects>
+                <viewController storyboardIdentifier="appPage" id="MYJ-fd-AeV" customClass="MainViewController" customModule="Saffron_Official" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2ze-up-MMU"/>
+                        <viewControllerLayoutGuide type="bottom" id="kIs-vF-Kdj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8X3-Kq-laf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="PUq-Ca-wWc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="indian1" translatesAutoresizingMaskIntoConstraints="NO" id="jG2-ip-y93">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="110.5"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chinese1" translatesAutoresizingMaskIntoConstraints="NO" id="q7D-6R-4u9">
+                                        <rect key="frame" x="0.0" y="111.5" width="375" height="110"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fusion1" translatesAutoresizingMaskIntoConstraints="NO" id="YYM-dq-urE">
+                                        <rect key="frame" x="0.0" y="222.5" width="375" height="110.5"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dessert1" translatesAutoresizingMaskIntoConstraints="NO" id="L3r-OD-4cz">
+                                        <rect key="frame" x="0.0" y="334" width="375" height="110.5"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beverages1" translatesAutoresizingMaskIntoConstraints="NO" id="k4Z-Ba-MJ7">
+                                        <rect key="frame" x="0.0" y="445.5" width="375" height="110"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wine1" translatesAutoresizingMaskIntoConstraints="NO" id="yp5-7Z-TJx">
+                                        <rect key="frame" x="0.0" y="556.5" width="375" height="110.5"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="jG2-ip-y93" firstAttribute="top" secondItem="PUq-Ca-wWc" secondAttribute="top" id="3US-Gj-e8C"/>
+                                    <constraint firstAttribute="trailing" secondItem="q7D-6R-4u9" secondAttribute="trailing" id="4Gw-Yt-e47"/>
+                                    <constraint firstItem="jG2-ip-y93" firstAttribute="leading" secondItem="PUq-Ca-wWc" secondAttribute="leading" id="5Ie-H6-f5E"/>
+                                    <constraint firstItem="yp5-7Z-TJx" firstAttribute="leading" secondItem="PUq-Ca-wWc" secondAttribute="leading" id="5Jz-lF-SOX"/>
+                                    <constraint firstItem="L3r-OD-4cz" firstAttribute="leading" secondItem="PUq-Ca-wWc" secondAttribute="leading" id="HLQ-bv-JMF"/>
+                                    <constraint firstAttribute="trailing" secondItem="yp5-7Z-TJx" secondAttribute="trailing" id="V14-EE-U8B"/>
+                                    <constraint firstItem="k4Z-Ba-MJ7" firstAttribute="leading" secondItem="PUq-Ca-wWc" secondAttribute="leading" id="X3a-G9-QGP"/>
+                                    <constraint firstAttribute="trailing" secondItem="jG2-ip-y93" secondAttribute="trailing" id="Xg1-EG-M6g"/>
+                                    <constraint firstAttribute="trailing" secondItem="k4Z-Ba-MJ7" secondAttribute="trailing" id="bLb-CK-PWM"/>
+                                    <constraint firstAttribute="trailing" secondItem="L3r-OD-4cz" secondAttribute="trailing" id="efy-cU-VqU"/>
+                                    <constraint firstItem="jG2-ip-y93" firstAttribute="leading" secondItem="PUq-Ca-wWc" secondAttribute="leading" id="hE0-BH-yHm"/>
+                                    <constraint firstAttribute="trailing" secondItem="YYM-dq-urE" secondAttribute="trailing" id="l1G-Kl-hjl"/>
+                                    <constraint firstItem="q7D-6R-4u9" firstAttribute="leading" secondItem="PUq-Ca-wWc" secondAttribute="leading" id="q98-f5-zku"/>
+                                    <constraint firstAttribute="trailing" secondItem="jG2-ip-y93" secondAttribute="trailing" id="qjX-h8-Lkl"/>
+                                    <constraint firstItem="YYM-dq-urE" firstAttribute="leading" secondItem="PUq-Ca-wWc" secondAttribute="leading" id="yUq-AU-vSc"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="PUq-Ca-wWc" secondAttribute="trailing" id="HVM-27-0jb"/>
+                            <constraint firstItem="PUq-Ca-wWc" firstAttribute="top" secondItem="8X3-Kq-laf" secondAttribute="top" id="Tq3-7u-j1a"/>
+                            <constraint firstItem="kIs-vF-Kdj" firstAttribute="top" secondItem="PUq-Ca-wWc" secondAttribute="bottom" id="bRG-Fd-E40"/>
+                            <constraint firstItem="PUq-Ca-wWc" firstAttribute="leading" secondItem="8X3-Kq-laf" secondAttribute="leading" id="fhN-5z-AG0"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nqq-VC-AaR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="919.20000000000005" y="131.78410794602701"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="beverages1" width="2350" height="693"/>
+        <image name="chinese1" width="2350" height="693"/>
+        <image name="dessert1" width="2350" height="693"/>
+        <image name="fusion1" width="2350" height="693"/>
+        <image name="indian1" width="2350" height="693"/>
+        <image name="wine1" width="2350" height="693"/>
+    </resources>
 </document>
