@@ -41,26 +41,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="PUq-Ca-wWc">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="PUq-Ca-wWc">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="indian1" translatesAutoresizingMaskIntoConstraints="NO" id="jG2-ip-y93">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="110.5"/>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="indian1" translatesAutoresizingMaskIntoConstraints="NO" id="jG2-ip-y93">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="111"/>
+                                        <gestureRecognizers/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chinese1" translatesAutoresizingMaskIntoConstraints="NO" id="q7D-6R-4u9">
-                                        <rect key="frame" x="0.0" y="111.5" width="375" height="110"/>
+                                        <rect key="frame" x="0.0" y="111" width="375" height="111.5"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fusion1" translatesAutoresizingMaskIntoConstraints="NO" id="YYM-dq-urE">
-                                        <rect key="frame" x="0.0" y="222.5" width="375" height="110.5"/>
+                                        <rect key="frame" x="0.0" y="222.5" width="375" height="111"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dessert1" translatesAutoresizingMaskIntoConstraints="NO" id="L3r-OD-4cz">
-                                        <rect key="frame" x="0.0" y="334" width="375" height="110.5"/>
+                                        <rect key="frame" x="0.0" y="333.5" width="375" height="111"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beverages1" translatesAutoresizingMaskIntoConstraints="NO" id="k4Z-Ba-MJ7">
-                                        <rect key="frame" x="0.0" y="445.5" width="375" height="110"/>
+                                        <rect key="frame" x="0.0" y="444.5" width="375" height="111.5"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wine1" translatesAutoresizingMaskIntoConstraints="NO" id="yp5-7Z-TJx">
-                                        <rect key="frame" x="0.0" y="556.5" width="375" height="110.5"/>
+                                        <rect key="frame" x="0.0" y="556" width="375" height="111"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -90,10 +91,13 @@
                             <constraint firstItem="PUq-Ca-wWc" firstAttribute="leading" secondItem="8X3-Kq-laf" secondAttribute="leading" id="fhN-5z-AG0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="indian" destination="jG2-ip-y93" id="daZ-Lc-SMp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nqq-VC-AaR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="919.20000000000005" y="131.78410794602701"/>
+            <point key="canvasLocation" x="1164" y="144"/>
         </scene>
     </scenes>
     <resources>

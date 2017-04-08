@@ -34,7 +34,7 @@ class ViewController: AnimatedPagingScrollViewController {
         
         pageControl.numberOfPages = 2
         self.view.addSubview(pageControl)
-        NSLayoutConstraint(item: pageControl, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: pageControl, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: -1).isActive = true
         NSLayoutConstraint(item: pageControl, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         
         
@@ -110,6 +110,7 @@ class ViewController: AnimatedPagingScrollViewController {
             let userdefaults = UserDefaults.standard
             userdefaults.set("appPage", forKey: "vc")
             userdefaults.synchronize()
+            
             self.performSegue(withIdentifier: "seg", sender: nil)
         }
         alertView.showTitle("Enter", subTitle: "Have you read the disclaimer?", duration: nil, completeText: "No", style: .warning, colorStyle: 0x000000, colorTextButton: 0xFFFFFF, circleIconImage: alertViewIcon, animationStyle: .rightToLeft)

@@ -9,10 +9,16 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
 
+    @IBOutlet weak var indian: UIImageView!
+    let gestureRec = UITapGestureRecognizer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        gestureRec.addTarget(self, action: #selector(animate))
+        indian.addGestureRecognizer(gestureRec)
+        
         // Do any additional setup after loading the view.
     }
 
@@ -23,6 +29,14 @@ class MainViewController: UIViewController {
     
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    func animate() {
+        UIView.animate(withDuration: 0.3) {
+            self.indian.center.x -= (2 * self.indian.center.x) + 200
+            self.indian.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+            //self.performSegue(withIdentifier: "seg2", sender: nil)
+        }
     }
     
     
@@ -38,3 +52,5 @@ class MainViewController: UIViewController {
     */
 
 }
+
+
