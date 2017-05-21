@@ -12,13 +12,43 @@ class MainViewController: UIViewController {
     
 
     @IBOutlet weak var indian: UIImageView!
-    let gestureRec = UITapGestureRecognizer()
+    @IBOutlet weak var chinese: UIImageView!
+    @IBOutlet weak var fusion: UIImageView!
+    @IBOutlet weak var dessert: UIImageView!
+    @IBOutlet weak var beverages: UIImageView!
+    @IBOutlet weak var wineList: UIImageView!
+    var imgViewArr = [UIImageView]()
+    var labelArr = [UILabel]()
+    
+    @IBOutlet weak var indianLabel: UILabel!
+    @IBOutlet weak var chineseLabel: UILabel!
+    @IBOutlet weak var fusionLabel: UILabel!
+    @IBOutlet weak var dessertLabel: UILabel!
+    @IBOutlet weak var beveragesLabel: UILabel!
+    @IBOutlet weak var wineLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        gestureRec.addTarget(self, action: #selector(animate))
-        indian.addGestureRecognizer(gestureRec)
+//        NSLayoutConstraint(item: indianLabel, attribute: .centerY, relatedBy: .equal, toItem: indian, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
+//        NSLayoutConstraint(item: chineseLabel, attribute: .centerY, relatedBy: .equal, toItem: chinese, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
+//        NSLayoutConstraint(item: fusionLabel, attribute: .centerY, relatedBy: .equal, toItem: fusion, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
+//        NSLayoutConstraint(item: dessertLabel, attribute: .centerY, relatedBy: .equal, toItem: dessert, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
+//        NSLayoutConstraint(item: beveragesLabel, attribute: .centerY, relatedBy: .equal, toItem: beverages, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
+//        NSLayoutConstraint(item: wineLabel, attribute: .centerY, relatedBy: .equal, toItem: wineList, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
         
+        imgViewArr.append(indian)
+        imgViewArr.append(chinese)
+        imgViewArr.append(fusion)
+        imgViewArr.append(dessert)
+        imgViewArr.append(beverages)
+        imgViewArr.append(wineList)
+        labelArr.append(indianLabel)
+        labelArr.append(chineseLabel)
+        labelArr.append(fusionLabel)
+        labelArr.append(dessertLabel)
+        labelArr.append(beveragesLabel)
+        labelArr.append(wineLabel)
+
         // Do any additional setup after loading the view.
     }
 
@@ -31,12 +61,39 @@ class MainViewController: UIViewController {
         return true
     }
     
-    func animate() {
-        UIView.animate(withDuration: 0.3) {
-            self.indian.center.x -= (2 * self.indian.center.x) + 200
-            self.indian.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
-            //self.performSegue(withIdentifier: "seg2", sender: nil)
+    @IBAction func onIndianPressed(_ sender: Any) {
+        animate(tag: 0)
+    }
+    
+    @IBAction func onChinesePressed(_ sender: Any) {
+        animate(tag: 1)
+    }
+    
+    @IBAction func onFusionPressed(_ sender: Any) {
+        animate(tag: 2)
+    }
+    
+    @IBAction func onDessertPressed(_ sender: Any) {
+        animate(tag: 3)
+
+    }
+    
+    @IBAction func onBeveragesPressed(_ sender: Any) {
+        animate(tag: 4)
+    }
+
+    @IBAction func onWinePressed(_ sender: Any) {
+        animate(tag: 5)
+    }
+
+    
+    func animate(tag: Int) {
+        UIView.animate(withDuration: 0.65) {
+            self.imgViewArr[tag].center.x -= (self.imgViewArr[tag].frame.width)
+            self.labelArr[tag].center.x -= (self.imgViewArr[tag].frame.width)
         }
+        self.performSegue(withIdentifier: "seg2", sender: nil)
+        print(tag)
     }
     
     
