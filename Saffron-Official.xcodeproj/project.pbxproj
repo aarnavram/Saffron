@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		17883A78ABB5E673829EA98D /* Pods_Saffron_Official.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D45CE52F3589A1ABE5C2530 /* Pods_Saffron_Official.framework */; };
+		A01B803F1EDAC3D90092E8A9 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01B803E1EDAC3D90092E8A9 /* CategoryCollectionViewCell.swift */; };
 		A09139FC1ED1998E0056FA9C /* SegueFromLeftToRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09139FB1ED1998E0056FA9C /* SegueFromLeftToRight.swift */; };
 		A0A89C061E95C1540058EFAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A89C051E95C1540058EFAB /* AppDelegate.swift */; };
 		A0A89C081E95C1540058EFAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A89C071E95C1540058EFAB /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 		2F629D39F0324AB258A75644 /* Pods-Saffron-Official.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saffron-Official.release.xcconfig"; path = "Pods/Target Support Files/Pods-Saffron-Official/Pods-Saffron-Official.release.xcconfig"; sourceTree = "<group>"; };
 		5A5965187FFF41233491DE63 /* Pods-Saffron-Official.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saffron-Official.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Saffron-Official/Pods-Saffron-Official.debug.xcconfig"; sourceTree = "<group>"; };
 		9D45CE52F3589A1ABE5C2530 /* Pods_Saffron_Official.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Saffron_Official.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A01B803E1EDAC3D90092E8A9 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		A09139FB1ED1998E0056FA9C /* SegueFromLeftToRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueFromLeftToRight.swift; sourceTree = "<group>"; };
 		A0A89C021E95C1540058EFAB /* Saffron-Official.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Saffron-Official.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A89C051E95C1540058EFAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				A0D19EB41EC78AB700EC5247 /* SegueFromRight.swift */,
 				A09139FB1ED1998E0056FA9C /* SegueFromLeftToRight.swift */,
 				A0E7B7CF1ED29AF100BCC072 /* CategoriesViewController.swift */,
+				A01B803E1EDAC3D90092E8A9 /* CategoryCollectionViewCell.swift */,
 			);
 			path = "Saffron-Official";
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				A0E7B7D01ED29AF100BCC072 /* CategoriesViewController.swift in Sources */,
 				A0A89C081E95C1540058EFAB /* ViewController.swift in Sources */,
 				A0D19EB51EC78AB700EC5247 /* SegueFromRight.swift in Sources */,
+				A01B803F1EDAC3D90092E8A9 /* CategoryCollectionViewCell.swift in Sources */,
 				A0A89C061E95C1540058EFAB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

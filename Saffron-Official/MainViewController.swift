@@ -89,7 +89,7 @@ class MainViewController: UIViewController {
 
     
     func animate(tag: Int) {
-        UIView.animate(withDuration: 0.65) {
+        UIView.animate(withDuration: 0.35) {
             self.imgViewArr[tag].center.x -= (self.imgViewArr[tag].frame.width)
             self.labelArr[tag].center.x -= (self.imgViewArr[tag].frame.width)
         }

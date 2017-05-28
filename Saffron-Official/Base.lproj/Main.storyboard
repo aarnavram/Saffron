@@ -256,7 +256,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qzW-ZX-Eag">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoWithoutBGWhite" translatesAutoresizingMaskIntoConstraints="NO" id="EUv-eC-bfr">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoWithoutBG" translatesAutoresizingMaskIntoConstraints="NO" id="EUv-eC-bfr">
                                         <rect key="frame" x="167" y="5" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="6vd-Vb-aOo"/>
@@ -283,19 +283,44 @@
                                 <rect key="frame" x="0.0" y="50" width="375" height="617"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8iM-Jy-QhX">
-                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="itemSize" width="150" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="categoryCollectionCell" id="hPe-lY-oXJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="categoryCollectionCell" id="hPe-lY-oXJ" customClass="CategoryCollectionViewCell" customModule="Saffron_Official" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="248" horizontalCompressionResistancePriority="754" verticalCompressionResistancePriority="754" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mi-pa-Wao">
+                                                    <rect key="frame" x="8" y="8" width="134" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoWithoutBG" translatesAutoresizingMaskIntoConstraints="NO" id="uLS-SZ-g9W">
+                                                    <rect key="frame" x="43" y="43" width="64" height="64"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="64" id="2xy-38-GcK"/>
+                                                        <constraint firstAttribute="height" constant="64" id="Kks-Hv-Wxl"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="uLS-SZ-g9W" firstAttribute="top" secondItem="0mi-pa-Wao" secondAttribute="bottom" constant="14.5" id="80u-Uf-99f"/>
+                                            <constraint firstAttribute="trailing" secondItem="0mi-pa-Wao" secondAttribute="trailing" constant="8" id="J1d-3H-VYR"/>
+                                            <constraint firstItem="0mi-pa-Wao" firstAttribute="top" secondItem="hPe-lY-oXJ" secondAttribute="top" constant="8" id="YTn-Xi-gq2"/>
+                                            <constraint firstItem="0mi-pa-Wao" firstAttribute="leading" secondItem="hPe-lY-oXJ" secondAttribute="leading" constant="8" id="tCH-Fr-BHQ"/>
+                                            <constraint firstItem="uLS-SZ-g9W" firstAttribute="centerX" secondItem="hPe-lY-oXJ" secondAttribute="centerX" id="tup-FT-Y7m"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="cellLabel" destination="0mi-pa-Wao" id="269-T8-NHE"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -326,6 +351,7 @@
         <image name="dessert1" width="1125" height="333"/>
         <image name="fusion1" width="1125" height="333"/>
         <image name="indian1" width="1125" height="333"/>
+        <image name="logoWithoutBG" width="629" height="625"/>
         <image name="logoWithoutBGWhite" width="610" height="608"/>
         <image name="wine1" width="1125" height="306"/>
     </resources>

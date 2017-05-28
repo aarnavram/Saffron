@@ -20,7 +20,8 @@ class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICo
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
-        
+        categoryCollectionView.backgroundColor = UIColor.init(red: 20/255, green: 20/255, blue: 20/255, alpha: 1)
+        categoryCollectionView.indicatorStyle = .white
         categoryCollectionView.dataSource = self
         categoryCollectionView.delegate = self
         
@@ -30,6 +31,8 @@ class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICo
         let dessert = ["Fusion Dessert", "Indian Dessert"]
         let beverages = ["Cold", "Milkshakes"]
         let wine = [String]() //NEED TO CHANGE THE JSON FILE FOR THE WINE
+        
+        
         categoryArray.append(indian)
         categoryArray.append(chinese)
         categoryArray.append(fusion)
@@ -39,6 +42,8 @@ class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICo
         
         print(category)
         print(categoryArray[category])
+        
+        self.categoryCollectionView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,14 +51,40 @@ class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICo
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 150, height: 150)
+        layout.minimumInteritemSpacing = 15
+        layout.minimumLineSpacing = 15
+        let leftInset = (categoryCollectionView.frame.width - layout.itemSize.width) / 2
+        layout.sectionInset = UIEdgeInsets(top: 15, left: leftInset, bottom: 15, right: leftInset)
+        categoryCollectionView.collectionViewLayout = layout
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categoryArray[category].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCollectionCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCollectionCell", for: indexPath) as! CategoryCollectionViewCell
+        
+        cell.layer.cornerRadius = 15
+        //cell.layer.borderColor = UIColor.white.cgColor
+        //cell.layer.borderWidth = 1
+        
+        let actualCategory = categoryArray[category]
+        cell.cellLabel.text = actualCategory[indexPath.row]
+        cell.cellLabel.textColor = UIColor.white
+        cell.backgroundColor = UIColor.black
         return cell
     }
+    
+
 
     /*
     // MARK: - Navigation
