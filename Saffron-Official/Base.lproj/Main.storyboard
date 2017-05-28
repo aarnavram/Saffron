@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,11 +23,12 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <segue destination="MYJ-fd-AeV" kind="presentation" identifier="seg" id="9j5-5t-lBq"/>
+                        <segue destination="MYJ-fd-AeV" kind="show" identifier="seg" id="xrV-jx-yMI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1462" y="72"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="Lm6-IM-Zgn">
@@ -105,7 +106,7 @@
                                     <constraint firstItem="YYM-dq-urE" firstAttribute="leading" secondItem="PUq-Ca-wWc" secondAttribute="leading" id="yUq-AU-vSc"/>
                                 </constraints>
                             </stackView>
-                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfe-nP-FMN">
+                            <view alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfe-nP-FMN">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indian" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXJ-FI-uTK">
@@ -189,6 +190,7 @@
                             <constraint firstItem="MZ7-ha-igy" firstAttribute="centerX" secondItem="nfe-nP-FMN" secondAttribute="centerX" id="wyj-H4-W7p"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="aGq-je-ZPX"/>
                     <connections>
                         <outlet property="beverages" destination="k4Z-Ba-MJ7" id="1Ol-C0-bfY"/>
                         <outlet property="beveragesLabel" destination="lLY-9g-UW7" id="qau-02-Rlr"/>
@@ -202,7 +204,7 @@
                         <outlet property="indianLabel" destination="LXJ-FI-uTK" id="Sec-Tb-hKf"/>
                         <outlet property="wineLabel" destination="nKw-Hm-euQ" id="mOR-Fi-jFb"/>
                         <outlet property="wineList" destination="yp5-7Z-TJx" id="WQk-tu-QHf"/>
-                        <segue destination="YEN-Nw-mJO" kind="show" identifier="seg2" customClass="SegueFromRight" customModule="Saffron_Official" customModuleProvider="target" id="Tyc-4d-d7z"/>
+                        <segue destination="YEN-Nw-mJO" kind="custom" identifier="seg2" customClass="SegueFromRight" customModule="Saffron_Official" customModuleProvider="target" id="EaG-eQ-fnq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nqq-VC-AaR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -237,12 +239,12 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1068" y="120"/>
+            <point key="canvasLocation" x="2504.8000000000002" y="71.514242878560722"/>
         </scene>
-        <!--View Controller-->
+        <!--Categories View Controller-->
         <scene sceneID="yu6-Bb-EYG">
             <objects>
-                <viewController id="YEN-Nw-mJO" sceneMemberID="viewController">
+                <viewController id="YEN-Nw-mJO" customClass="CategoriesViewController" customModule="Saffron_Official" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="a7o-aQ-kQ6"/>
                         <viewControllerLayoutGuide type="bottom" id="tXS-zg-HW1"/>
@@ -251,21 +253,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sqy-LL-suM">
-                                <rect key="frame" x="164" y="137" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="MYJ-fd-AeV" kind="show" customClass="SegueFromLeftToRight" customModule="Saffron_Official" customModuleProvider="target" id="HGy-ky-5Tm"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qzW-ZX-Eag">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoWithoutBGWhite" translatesAutoresizingMaskIntoConstraints="NO" id="EUv-eC-bfr">
+                                        <rect key="frame" x="167" y="5" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="6vd-Vb-aOo"/>
+                                            <constraint firstAttribute="width" constant="40" id="gMx-KS-gzX"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sqy-LL-suM">
+                                        <rect key="frame" x="8" y="10" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <segue destination="MYJ-fd-AeV" kind="show" customClass="SegueFromLeftToRight" customModule="Saffron_Official" customModuleProvider="target" id="0CC-IO-Wvy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="IL1-21-2dU"/>
+                                    <constraint firstItem="EUv-eC-bfr" firstAttribute="centerX" secondItem="qzW-ZX-Eag" secondAttribute="centerX" id="jeh-Yb-pYT"/>
+                                    <constraint firstItem="EUv-eC-bfr" firstAttribute="centerY" secondItem="qzW-ZX-Eag" secondAttribute="centerY" id="n8a-Oc-gsh"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PE6-ig-P74">
+                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8iM-Jy-QhX">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="categoryCollectionCell" id="hPe-lY-oXJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="PE6-ig-P74" secondAttribute="trailing" id="CVA-gG-8PF"/>
+                            <constraint firstItem="PE6-ig-P74" firstAttribute="top" secondItem="qzW-ZX-Eag" secondAttribute="bottom" id="Ma5-uY-QXO"/>
+                            <constraint firstItem="tXS-zg-HW1" firstAttribute="top" secondItem="PE6-ig-P74" secondAttribute="bottom" id="Rr0-D6-Poz"/>
+                            <constraint firstItem="qzW-ZX-Eag" firstAttribute="leading" secondItem="4nS-E3-PDZ" secondAttribute="leading" id="VEB-Ct-Puf"/>
+                            <constraint firstItem="qzW-ZX-Eag" firstAttribute="top" secondItem="4nS-E3-PDZ" secondAttribute="top" id="WYQ-XL-HSL"/>
+                            <constraint firstItem="PE6-ig-P74" firstAttribute="leading" secondItem="4nS-E3-PDZ" secondAttribute="leading" id="fq3-HS-9Zb"/>
+                            <constraint firstAttribute="trailing" secondItem="qzW-ZX-Eag" secondAttribute="trailing" id="izd-sT-0Tp"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="categoryCollectionView" destination="PE6-ig-P74" id="EcX-1s-9mj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PhZ-om-gJv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2114" y="-41"/>
+            <point key="canvasLocation" x="3448.8000000000002" y="71.514242878560722"/>
         </scene>
     </scenes>
     <resources>
@@ -278,6 +330,6 @@
         <image name="wine1" width="1125" height="306"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HGy-ky-5Tm"/>
+        <segue reference="0CC-IO-Wvy"/>
     </inferredMetricsTieBreakers>
 </document>

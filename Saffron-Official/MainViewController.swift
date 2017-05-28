@@ -27,15 +27,10 @@ class MainViewController: UIViewController {
     @IBOutlet weak var beveragesLabel: UILabel!
     @IBOutlet weak var wineLabel: UILabel!
     
+    var senderTag = -1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        NSLayoutConstraint(item: indianLabel, attribute: .centerY, relatedBy: .equal, toItem: indian, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
-//        NSLayoutConstraint(item: chineseLabel, attribute: .centerY, relatedBy: .equal, toItem: chinese, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
-//        NSLayoutConstraint(item: fusionLabel, attribute: .centerY, relatedBy: .equal, toItem: fusion, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
-//        NSLayoutConstraint(item: dessertLabel, attribute: .centerY, relatedBy: .equal, toItem: dessert, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
-//        NSLayoutConstraint(item: beveragesLabel, attribute: .centerY, relatedBy: .equal, toItem: beverages, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
-//        NSLayoutConstraint(item: wineLabel, attribute: .centerY, relatedBy: .equal, toItem: wineList, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
-        
         imgViewArr.append(indian)
         imgViewArr.append(chinese)
         imgViewArr.append(fusion)
@@ -48,7 +43,7 @@ class MainViewController: UIViewController {
         labelArr.append(dessertLabel)
         labelArr.append(beveragesLabel)
         labelArr.append(wineLabel)
-
+        //self.navigationController?.navigationBar.isHidden = true
         // Do any additional setup after loading the view.
     }
 
@@ -62,27 +57,33 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func onIndianPressed(_ sender: Any) {
+        senderTag = 0
         animate(tag: 0)
     }
     
     @IBAction func onChinesePressed(_ sender: Any) {
+        senderTag = 1
         animate(tag: 1)
     }
     
     @IBAction func onFusionPressed(_ sender: Any) {
+        senderTag = 2
         animate(tag: 2)
     }
     
     @IBAction func onDessertPressed(_ sender: Any) {
+        senderTag = 3
         animate(tag: 3)
 
     }
     
     @IBAction func onBeveragesPressed(_ sender: Any) {
+        senderTag = 4
         animate(tag: 4)
     }
 
     @IBAction func onWinePressed(_ sender: Any) {
+        senderTag = 5
         animate(tag: 5)
     }
 
@@ -93,7 +94,13 @@ class MainViewController: UIViewController {
             self.labelArr[tag].center.x -= (self.imgViewArr[tag].frame.width)
         }
         self.performSegue(withIdentifier: "seg2", sender: nil)
-        print(tag)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "seg2" {
+            let destination = segue.destination as! CategoriesViewController
+            destination.category = senderTag
+        }
     }
     
     

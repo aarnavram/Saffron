@@ -16,6 +16,7 @@
 		A0A89C101E95C1540058EFAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A89C0E1E95C1540058EFAB /* LaunchScreen.storyboard */; };
 		A0A89C181E95C1FA0058EFAB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A89C171E95C1FA0058EFAB /* MainViewController.swift */; };
 		A0D19EB51EC78AB700EC5247 /* SegueFromRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D19EB41EC78AB700EC5247 /* SegueFromRight.swift */; };
+		A0E7B7D01ED29AF100BCC072 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E7B7CF1ED29AF100BCC072 /* CategoriesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		A0A89C111E95C1540058EFAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0A89C171E95C1FA0058EFAB /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A0D19EB41EC78AB700EC5247 /* SegueFromRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueFromRight.swift; sourceTree = "<group>"; };
+		A0E7B7CF1ED29AF100BCC072 /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				A0A89C171E95C1FA0058EFAB /* MainViewController.swift */,
 				A0D19EB41EC78AB700EC5247 /* SegueFromRight.swift */,
 				A09139FB1ED1998E0056FA9C /* SegueFromLeftToRight.swift */,
+				A0E7B7CF1ED29AF100BCC072 /* CategoriesViewController.swift */,
 			);
 			path = "Saffron-Official";
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			files = (
 				A0A89C181E95C1FA0058EFAB /* MainViewController.swift in Sources */,
 				A09139FC1ED1998E0056FA9C /* SegueFromLeftToRight.swift in Sources */,
+				A0E7B7D01ED29AF100BCC072 /* CategoriesViewController.swift in Sources */,
 				A0A89C081E95C1540058EFAB /* ViewController.swift in Sources */,
 				A0D19EB51EC78AB700EC5247 /* SegueFromRight.swift in Sources */,
 				A0A89C061E95C1540058EFAB /* AppDelegate.swift in Sources */,
