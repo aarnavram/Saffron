@@ -1,18 +1,21 @@
 PODS:
+  - FoldingCell (2.0.5)
   - RazzleDazzle (0.1.5)
   - SCLAlertView (0.7.0)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
+  - FoldingCell
   - RazzleDazzle
   - SCLAlertView
   - SwiftyJSON
 
 SPEC CHECKSUMS:
+  FoldingCell: fb189fc746e95b722a1debf8ef455006b70cae2e
   RazzleDazzle: 0b1b9fc8ceed04bfdd4b3e8182e98ef7edacd1d1
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 89e0358ca0ccf9a18054c0c925f329fb5ed6f049
+PODFILE CHECKSUM: ee8503bdce3bec42001a4f310de520dd8d8be20c
 
 COCOAPODS: 1.2.0

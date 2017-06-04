@@ -9,5 +9,6 @@ target 'Saffron-Official' do
   pod "RazzleDazzle"
   pod 'SCLAlertView'
   pod 'SwiftyJSON'
+  pod 'FoldingCell'
 
 end

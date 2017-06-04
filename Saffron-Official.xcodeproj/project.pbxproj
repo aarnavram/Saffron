@@ -10,6 +10,7 @@
 		17883A78ABB5E673829EA98D /* Pods_Saffron_Official.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D45CE52F3589A1ABE5C2530 /* Pods_Saffron_Official.framework */; };
 		A01B803F1EDAC3D90092E8A9 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01B803E1EDAC3D90092E8A9 /* CategoryCollectionViewCell.swift */; };
 		A09139FC1ED1998E0056FA9C /* SegueFromLeftToRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09139FB1ED1998E0056FA9C /* SegueFromLeftToRight.swift */; };
+		A09DD60E1EE3EAA800A528DA /* DishesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09DD60D1EE3EAA800A528DA /* DishesViewController.swift */; };
 		A0A89C061E95C1540058EFAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A89C051E95C1540058EFAB /* AppDelegate.swift */; };
 		A0A89C081E95C1540058EFAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A89C071E95C1540058EFAB /* ViewController.swift */; };
 		A0A89C0B1E95C1540058EFAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A89C091E95C1540058EFAB /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		9D45CE52F3589A1ABE5C2530 /* Pods_Saffron_Official.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Saffron_Official.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01B803E1EDAC3D90092E8A9 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		A09139FB1ED1998E0056FA9C /* SegueFromLeftToRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueFromLeftToRight.swift; sourceTree = "<group>"; };
+		A09DD60D1EE3EAA800A528DA /* DishesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishesViewController.swift; sourceTree = "<group>"; };
 		A0A89C021E95C1540058EFAB /* Saffron-Official.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Saffron-Official.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A89C051E95C1540058EFAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0A89C071E95C1540058EFAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,48 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A09DD6081EE3E7B900A528DA /* Custom UI Files */ = {
+			isa = PBXGroup;
+			children = (
+				A09139FB1ED1998E0056FA9C /* SegueFromLeftToRight.swift */,
+				A0D19EB41EC78AB700EC5247 /* SegueFromRight.swift */,
+			);
+			name = "Custom UI Files";
+			sourceTree = "<group>";
+		};
+		A09DD6091EE3E7E900A528DA /* Welcome Page */ = {
+			isa = PBXGroup;
+			children = (
+				A0A89C071E95C1540058EFAB /* ViewController.swift */,
+			);
+			name = "Welcome Page";
+			sourceTree = "<group>";
+		};
+		A09DD60A1EE3E81600A528DA /* Main Option Page */ = {
+			isa = PBXGroup;
+			children = (
+				A0A89C171E95C1FA0058EFAB /* MainViewController.swift */,
+			);
+			name = "Main Option Page";
+			sourceTree = "<group>";
+		};
+		A09DD60B1EE3E82600A528DA /* Categories Page */ = {
+			isa = PBXGroup;
+			children = (
+				A0E7B7CF1ED29AF100BCC072 /* CategoriesViewController.swift */,
+				A01B803E1EDAC3D90092E8A9 /* CategoryCollectionViewCell.swift */,
+			);
+			name = "Categories Page";
+			sourceTree = "<group>";
+		};
+		A09DD60C1EE3E86500A528DA /* Dishes Page */ = {
+			isa = PBXGroup;
+			children = (
+				A09DD60D1EE3EAA800A528DA /* DishesViewController.swift */,
+			);
+			name = "Dishes Page";
+			sourceTree = "<group>";
+		};
 		A0A89BF91E95C1540058EFAB = {
 			isa = PBXGroup;
 			children = (
@@ -80,17 +124,16 @@
 		A0A89C041E95C1540058EFAB /* Saffron-Official */ = {
 			isa = PBXGroup;
 			children = (
+				A09DD60C1EE3E86500A528DA /* Dishes Page */,
+				A09DD60B1EE3E82600A528DA /* Categories Page */,
+				A09DD60A1EE3E81600A528DA /* Main Option Page */,
+				A09DD6091EE3E7E900A528DA /* Welcome Page */,
+				A09DD6081EE3E7B900A528DA /* Custom UI Files */,
 				A0A89C051E95C1540058EFAB /* AppDelegate.swift */,
-				A0A89C071E95C1540058EFAB /* ViewController.swift */,
 				A0A89C091E95C1540058EFAB /* Main.storyboard */,
 				A0A89C0C1E95C1540058EFAB /* Assets.xcassets */,
 				A0A89C0E1E95C1540058EFAB /* LaunchScreen.storyboard */,
 				A0A89C111E95C1540058EFAB /* Info.plist */,
-				A0A89C171E95C1FA0058EFAB /* MainViewController.swift */,
-				A0D19EB41EC78AB700EC5247 /* SegueFromRight.swift */,
-				A09139FB1ED1998E0056FA9C /* SegueFromLeftToRight.swift */,
-				A0E7B7CF1ED29AF100BCC072 /* CategoriesViewController.swift */,
-				A01B803E1EDAC3D90092E8A9 /* CategoryCollectionViewCell.swift */,
 			);
 			path = "Saffron-Official";
 			sourceTree = "<group>";
@@ -231,6 +274,7 @@
 				A09139FC1ED1998E0056FA9C /* SegueFromLeftToRight.swift in Sources */,
 				A0E7B7D01ED29AF100BCC072 /* CategoriesViewController.swift in Sources */,
 				A0A89C081E95C1540058EFAB /* ViewController.swift in Sources */,
+				A09DD60E1EE3EAA800A528DA /* DishesViewController.swift in Sources */,
 				A0D19EB51EC78AB700EC5247 /* SegueFromRight.swift in Sources */,
 				A01B803F1EDAC3D90092E8A9 /* CategoryCollectionViewCell.swift in Sources */,
 				A0A89C061E95C1540058EFAB /* AppDelegate.swift in Sources */,

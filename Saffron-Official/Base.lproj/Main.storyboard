@@ -320,6 +320,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="cellLabel" destination="0mi-pa-Wao" id="269-T8-NHE"/>
+                                            <segue destination="nT6-DN-B8S" kind="custom" customClass="SegueFromRight" customModule="Saffron_Official" customModuleProvider="target" id="mCe-9F-zt9"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -343,6 +344,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PhZ-om-gJv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3448.8000000000002" y="71.514242878560722"/>
+        </scene>
+        <!--Dishes View Controller-->
+        <scene sceneID="gWC-kU-XKS">
+            <objects>
+                <viewController id="nT6-DN-B8S" customClass="DishesViewController" customModule="Saffron_Official" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kSl-s1-lqR"/>
+                        <viewControllerLayoutGuide type="bottom" id="LPX-rN-YGc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q4s-UZ-Lee">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZS-k5-okD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoWithoutBGWhite" translatesAutoresizingMaskIntoConstraints="NO" id="nrK-6M-NXf">
+                                        <rect key="frame" x="168" y="5" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="AsU-DA-ywL"/>
+                                            <constraint firstAttribute="height" constant="40" id="gqZ-Gr-hir"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="nrK-6M-NXf" firstAttribute="centerY" secondItem="bZS-k5-okD" secondAttribute="centerY" id="Ar3-Te-m0m"/>
+                                    <constraint firstAttribute="height" constant="50" id="Etb-V2-yih"/>
+                                    <constraint firstItem="nrK-6M-NXf" firstAttribute="centerX" secondItem="bZS-k5-okD" secondAttribute="centerX" id="VMf-qc-HOc"/>
+                                    <constraint firstItem="nrK-6M-NXf" firstAttribute="centerX" secondItem="bZS-k5-okD" secondAttribute="centerX" id="ZtG-Z1-30h"/>
+                                    <constraint firstItem="nrK-6M-NXf" firstAttribute="centerY" secondItem="bZS-k5-okD" secondAttribute="centerY" id="vES-AX-FdM"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rnm-E3-nfi">
+                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rnm-E3-nfi" firstAttribute="top" secondItem="bZS-k5-okD" secondAttribute="bottom" id="K6C-V1-98h"/>
+                            <constraint firstAttribute="trailing" secondItem="bZS-k5-okD" secondAttribute="trailing" id="MhV-Zz-BXh"/>
+                            <constraint firstItem="bZS-k5-okD" firstAttribute="leading" secondItem="q4s-UZ-Lee" secondAttribute="leading" id="Z7j-2E-oVH"/>
+                            <constraint firstItem="rnm-E3-nfi" firstAttribute="leading" secondItem="q4s-UZ-Lee" secondAttribute="leading" id="c1i-Ta-svg"/>
+                            <constraint firstItem="bZS-k5-okD" firstAttribute="top" secondItem="q4s-UZ-Lee" secondAttribute="top" id="igq-rC-wPv"/>
+                            <constraint firstAttribute="trailing" secondItem="rnm-E3-nfi" secondAttribute="trailing" id="rm0-Xn-HND"/>
+                            <constraint firstItem="LPX-rN-YGc" firstAttribute="top" secondItem="rnm-E3-nfi" secondAttribute="bottom" id="uyX-C5-gHP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dishTableView" destination="rnm-E3-nfi" id="juM-eo-tBa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aqa-hI-Ipo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4285.6000000000004" y="71.514242878560722"/>
         </scene>
     </scenes>
     <resources>
