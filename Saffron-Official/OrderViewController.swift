@@ -1,25 +1,34 @@
 //
-//  MainTableViewController.swift
+//  OrderViewController.swift
 //  Saffron-Official
 //
-//  Created by Aarnav Ram on 04/06/17.
+//  Created by Aarnav Ram on 05/06/17.
 //  Copyright © 2017 Aarnav Ram. All rights reserved.
 //
 
 import UIKit
 import FoldingCell
 
-class MainTableViewController: UITableViewController {
+class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    var category = -1
     let kCloseCellHeight: CGFloat = 117 //double space + height of closed
     let kOpenCellHeight: CGFloat = 330 //height + 9
     let kRowsCount = 5
     var cellHeights: [CGFloat] = []
     
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
         setup()
+        tableView.backgroundColor = UIColor.init(red: 40/255, green: 40/255, blue: 40/255, alpha: 1)
         tableView.separatorStyle = .none
+        let backImageView = UIImageView()
+        backImageView.image = UIImage(named: "transparentDishBack")
+        backImageView.contentMode = .scaleAspectFill
+        tableView.backgroundView = backImageView
     }
     
     override func didReceiveMemoryWarning() {
@@ -27,13 +36,7 @@ class MainTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return kRowsCount
     }
     
@@ -44,11 +47,11 @@ class MainTableViewController: UITableViewController {
     }
     
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return cellHeights[indexPath.row]
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! FoldingCell
         
         if cell.isAnimating() {
@@ -72,8 +75,9 @@ class MainTableViewController: UITableViewController {
         }, completion: nil)
     }
     
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if case let cell as FoldingCell = cell {
+            cell.backgroundColor = UIColor.clear
             if cellHeights[indexPath.row] == kCloseCellHeight {
                 cell.selectedAnimation(false, animated: false, completion:nil)
             } else {
@@ -83,9 +87,30 @@ class MainTableViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! FoldingCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! OrderCell
+        cell.foreView.layer.cornerRadius = 20
+        cell.contView.layer.cornerRadius = 20
+        cell.foreView.clipsToBounds = true
+        cell.contView.clipsToBounds = true
+        cell.addButton.backgroundColor = UIColor.red
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! CategoriesViewController
+        destination.category = self.category
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
 }

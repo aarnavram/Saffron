@@ -1,16 +1,21 @@
 //
-//  MainFoldingCell.swift
+//  OrderCell.swift
 //  Saffron-Official
 //
-//  Created by Aarnav Ram on 04/06/17.
+//  Created by Aarnav Ram on 05/06/17.
 //  Copyright © 2017 Aarnav Ram. All rights reserved.
 //
 
 import UIKit
 import FoldingCell
 
-class MainFoldingCell: FoldingCell {
+class OrderCell: FoldingCell {
 
+    @IBOutlet weak var foreView: RotatedView!
+    @IBOutlet weak var contView: UIView!
+    @IBOutlet weak var addButton: UIButton!
+    
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -18,6 +23,11 @@ class MainFoldingCell: FoldingCell {
         // Drawing code
     }
     */
+
+    @IBAction func onAddPressed(_ sender: Any) {
+        
+        print("Tapped")
+    }
     
     override func animationDuration(_ itemIndex:NSInteger, type:AnimationType)-> TimeInterval {
         

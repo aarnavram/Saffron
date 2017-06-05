@@ -20,7 +20,7 @@ class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICo
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
-        categoryCollectionView.backgroundColor = UIColor.init(red: 20/255, green: 20/255, blue: 20/255, alpha: 1)
+        categoryCollectionView.backgroundColor = UIColor.init(red: 40/255, green: 40/255, blue: 40/255, alpha: 1)
         categoryCollectionView.indicatorStyle = .white
         categoryCollectionView.dataSource = self
         categoryCollectionView.delegate = self
@@ -50,6 +50,7 @@ class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICo
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -86,14 +87,17 @@ class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICo
     
 
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "toDish" {
+            let destination = segue.destination as! OrderViewController
+            destination.category = self.category
+        }
     }
-    */
 
 }
