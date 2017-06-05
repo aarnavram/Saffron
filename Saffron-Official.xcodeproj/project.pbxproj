@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		17883A78ABB5E673829EA98D /* Pods_Saffron_Official.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D45CE52F3589A1ABE5C2530 /* Pods_Saffron_Official.framework */; };
 		A01B803F1EDAC3D90092E8A9 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01B803E1EDAC3D90092E8A9 /* CategoryCollectionViewCell.swift */; };
+		A07D68891EE4B7100033103F /* MainFoldingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07D68881EE4B7100033103F /* MainFoldingCell.swift */; };
+		A07D688B1EE4B8080033103F /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07D688A1EE4B8080033103F /* MainTableViewController.swift */; };
 		A09139FC1ED1998E0056FA9C /* SegueFromLeftToRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09139FB1ED1998E0056FA9C /* SegueFromLeftToRight.swift */; };
-		A09DD60E1EE3EAA800A528DA /* DishesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09DD60D1EE3EAA800A528DA /* DishesViewController.swift */; };
 		A0A89C061E95C1540058EFAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A89C051E95C1540058EFAB /* AppDelegate.swift */; };
 		A0A89C081E95C1540058EFAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A89C071E95C1540058EFAB /* ViewController.swift */; };
 		A0A89C0B1E95C1540058EFAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A89C091E95C1540058EFAB /* Main.storyboard */; };
@@ -26,8 +27,9 @@
 		5A5965187FFF41233491DE63 /* Pods-Saffron-Official.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saffron-Official.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Saffron-Official/Pods-Saffron-Official.debug.xcconfig"; sourceTree = "<group>"; };
 		9D45CE52F3589A1ABE5C2530 /* Pods_Saffron_Official.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Saffron_Official.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01B803E1EDAC3D90092E8A9 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		A07D68881EE4B7100033103F /* MainFoldingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFoldingCell.swift; sourceTree = "<group>"; };
+		A07D688A1EE4B8080033103F /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		A09139FB1ED1998E0056FA9C /* SegueFromLeftToRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueFromLeftToRight.swift; sourceTree = "<group>"; };
-		A09DD60D1EE3EAA800A528DA /* DishesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishesViewController.swift; sourceTree = "<group>"; };
 		A0A89C021E95C1540058EFAB /* Saffron-Official.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Saffron-Official.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A89C051E95C1540058EFAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0A89C071E95C1540058EFAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,7 +100,8 @@
 		A09DD60C1EE3E86500A528DA /* Dishes Page */ = {
 			isa = PBXGroup;
 			children = (
-				A09DD60D1EE3EAA800A528DA /* DishesViewController.swift */,
+				A07D68881EE4B7100033103F /* MainFoldingCell.swift */,
+				A07D688A1EE4B8080033103F /* MainTableViewController.swift */,
 			);
 			name = "Dishes Page";
 			sourceTree = "<group>";
@@ -270,11 +273,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A07D68891EE4B7100033103F /* MainFoldingCell.swift in Sources */,
 				A0A89C181E95C1FA0058EFAB /* MainViewController.swift in Sources */,
 				A09139FC1ED1998E0056FA9C /* SegueFromLeftToRight.swift in Sources */,
 				A0E7B7D01ED29AF100BCC072 /* CategoriesViewController.swift in Sources */,
+				A07D688B1EE4B8080033103F /* MainTableViewController.swift in Sources */,
 				A0A89C081E95C1540058EFAB /* ViewController.swift in Sources */,
-				A09DD60E1EE3EAA800A528DA /* DishesViewController.swift in Sources */,
 				A0D19EB51EC78AB700EC5247 /* SegueFromRight.swift in Sources */,
 				A01B803F1EDAC3D90092E8A9 /* CategoryCollectionViewCell.swift in Sources */,
 				A0A89C061E95C1540058EFAB /* AppDelegate.swift in Sources */,
