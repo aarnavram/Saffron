@@ -1,0 +1,47 @@
+[
+  {
+    "food": "BBQ Spare Ribs (600g)",
+    "description": "Served with either roasted vegetables, rice, chips, baked potato in sour cream or potato wedges",
+    "price": "P140"
+  },
+  {
+    "food": "T Bone Steak (400g)",
+    "description": "Served with either roasted vegetables, rice, chips, baked potato in sour cream or potato wedges",
+    "price": "P140"
+  },
+  {
+    "food": "Lamb Chops (300g)",
+    "description": "Served with either roasted vegetables, rice, chips, baked potato in sour cream or potato wedges",
+    "price": "P155"
+  },
+  {
+    "food": "Beef Fillet (350g)",
+    "description": "Served with either roasted vegetables, rice, chips, baked potato in sour cream or potato wedges",
+    "price": "P135"
+  },
+  {
+    "food": "Pepper Steak (350g)",
+    "description": "Served with either roasted vegetables, rice, chips, baked potato in sour cream or potato wedges",
+    "price": "P145"
+  },
+  {
+    "food": "Rump Steak (350g)",
+    "description": "Served with either roasted vegetables, rice, chips, baked potato in sour cream or potato wedges",
+    "price": "P120"
+  },
+  {
+    "food": "Cream Spinach",
+    "description": "Spinach with cream & salt",
+    "price": "P21"
+  },
+  {
+    "food": "Mushroom Sauce",
+    "description": "Mushroom, cream with soya sauce",
+    "price": "P21"
+  },
+  {
+    "food": "Pepper sauce",
+    "description": "Cream, crushed pepper & soya sauce",
+    "price": "P21"
+  }
+]

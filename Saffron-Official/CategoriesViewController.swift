@@ -12,6 +12,7 @@ class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICo
     
     var category = -1
     var categoryArray = [[String]]()
+    var subCategory = -1
     
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     
@@ -40,8 +41,8 @@ class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICo
         categoryArray.append(beverages)
         categoryArray.append(wine)
         
-        print(category)
-        print(categoryArray[category])
+//        print(category)
+//        print(categoryArray[category])
         
         self.categoryCollectionView.reloadData()
     }
@@ -97,6 +98,9 @@ class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICo
         if segue.identifier == "toDish" {
             let destination = segue.destination as! OrderViewController
             destination.category = self.category
+            let senderCell = sender as! CategoryCollectionViewCell
+            subCategory = (self.categoryCollectionView.indexPath(for: senderCell)?.row)!
+            destination.subCategory = subCategory
         }
     }
 

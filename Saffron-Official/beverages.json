@@ -1,0 +1,47 @@
+[
+  {
+    "Drink": "MANGO LASSI",
+    "Description": "Blended mango pulp with plain yoghurt",
+    "Price": "P35"
+  },
+  {
+    "Drink": "MALAI LASSI",
+    "Description": "Blended plain yoghurt with cream",
+    "Price": "P31"
+  },
+  {
+    "Drink": "SALTY LASSI",
+    "Description": "Blended plain yoghurt and salt",
+    "Price": "P26"
+  },
+  {
+    "Drink": "SWEET LASSI",
+    "Description": "Blended plain yoghurt and sugar",
+    "Price": "P28"
+  },
+  {
+    "Drink": "CHAACH",
+    "Description": "Blended yoghurt with salt and black salt with cumin powder (thin)",
+    "Price": "P26"
+  },
+  {
+    "Drink": "VANILLA MILKSHAKE",
+    "Description": "Blended plain ice-cream and milk with vanilla flavoured syrup",
+    "Price": "P28"
+  },
+  {
+    "Drink": "STRAWBERRY MILKSHAKE",
+    "Description": "Blended plain ice-cream and milk with strawberry flavoured syrup",
+    "Price": "P28"
+  },
+  {
+    "Drink": "CHOCOLATE MILKSHAKE",
+    "Description": "Blended plain ice-cream and milk with chocolate flavoured syrup",
+    "Price": "P28"
+  },
+  {
+    "Drink": "LIME MILKSHAKE",
+    "Description": "Blended plain ice-cream and milk with lime flavoured syrup",
+    "Price": "P28"
+  }
+]

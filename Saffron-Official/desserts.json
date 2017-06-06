@@ -1,0 +1,52 @@
+[
+  {
+    "food": "Trifle",
+    "description": "Custard with jelly, peaches, cocktail and tennis biscuits",
+    "price": "P35"
+  },
+  {
+    "food": "Peach Melba",
+    "description": "Yoghurt and sliced peaches and whipped cream",
+    "price": "P35"
+  },
+  {
+    "food": "Fruit Salad",
+    "description": "Assorted chopped fruit salad",
+    "price": "P35"
+  },
+  {
+    "food": "Kesar Phirni",
+    "description": "An Indian sweet made with rice and milk\nPreparation: Special Order Only",
+    "price": "P43"
+  },
+  {
+    "food": "Ras-Malai",
+    "description": "An Indian sweet made into flat pieces in milk with saffron flavour\nPreparation: Special Order Only",
+    "price": "P43"
+  },
+  {
+    "food": "Rasgulla",
+    "description": "An Indian sweet made with cheese balls and dipped in sugar syrup\nPreparation: Special Order Only",
+    "price": "P28"
+  },
+  {
+    "food": "Moong Dal Ka Halwa",
+    "description": "An Indian sweet made with yellow lentils and milk. (pudding-like dessert)\nPreparation: Special Order Only",
+    "price": "P43"
+  },
+  {
+    "food": "Gajar Ka Halwa",
+    "description": "An Indian sweet made with yellow lentils and milk. (pudding-like dessert)\nPreparation: Special Order Only",
+    "price": "P43"
+  },
+  {
+    "food": "Kala Juman",
+    "description": "An Indian sweet made with yellow lentils and milk. (pudding-like dessert)",
+    "price": "P35"
+  },
+  {
+    "food": "Gulab Juman",
+    "description": "An Indian sweet made with yellow lentils and milk. (pudding-like dessert)",
+    "price": "P28"
+  }
+]

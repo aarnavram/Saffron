@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        initOfflineClient()
             
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -38,6 +40,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return true
+    }
+    
+    func initOfflineClient() {
+        OfflineClient.sharedInstance.initArrays()
+        OfflineClient.sharedInstance.parseIndian()
+        OfflineClient.sharedInstance.parseChinese()
+        OfflineClient.sharedInstance.parseFusion()
+        OfflineClient.sharedInstance.parseDesserts()
+        OfflineClient.sharedInstance.parseBeverages()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

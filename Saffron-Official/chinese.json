@@ -1,0 +1,77 @@
+[
+  {
+    "food": "Sizzler chicken",
+    "description": "Diced chicken deep fried and cooked in a chinese sauce & served in a sizzling hot plate",
+    "price": "P78"
+  },
+  {
+    "food": "Sweet and Sour Chicken",
+    "description": "Diced chicken in a sweet and sour sauce",
+    "price": "P71"
+  },
+  {
+    "food": "Vegetable Manchurian",
+    "description": "Vegetables balls cooked in chinese soya sauce",
+    "price": "P69"
+  },
+  {
+    "food": "Vegetable Spring Roll",
+    "description": "Vegetable pastry roll",
+    "price": "P68"
+  },
+  {
+    "food": "Chicken Spring Roll",
+    "description": "Chicken pastry roll",
+    "price": "P78"
+  },
+  {
+    "food": "Chicken Manchurian",
+    "description": "Chicken balls cooked in chinese soya sauce",
+    "price": "P71"
+  },
+  {
+    "food": "Schezwan Noodles",
+    "description": "Noodles cooked in chinese schezwan sauce",
+    "price": "P64"
+  },
+  {
+    "food": "Schezwan Fried Rice",
+    "description": "Basmati rice cooked in chinese shezwan sauce",
+    "price": "P64"
+  },
+  {
+    "food": "Egg Fried Rice",
+    "description": "A rice based dish with scrambled",
+    "price": "P64"
+  },
+  {
+    "food": "Vegetable Fried Rice",
+    "description": "A rice based dish with vegetables",
+    "price": "P64"
+  },
+  {
+    "food": "Chicken Fried Rice",
+    "description": "A rice based dish with chicken cubes",
+    "price": "P69"
+  },
+  {
+    "food": "Chilly Paneer",
+    "description": "Roasted cottage cheese cooked in chinese soya sauce with green pepper & onion",
+    "price": "P64"
+  },
+  {
+    "food": "Chilly Chicken",
+    "description": "Tangy fried chicken cooked in chinese soya sauce with green pepper & onion",
+    "price": "P71"
+  },
+  {
+    "food": "Chicken Noodles",
+    "description": "Noodles with chicken strips & vegetables",
+    "price": "P69"
+  },
+  {
+    "food": "Vegetarian Noodles",
+    "description": "Noodles with vegetables",
+    "price": "P64"
+  }
+]

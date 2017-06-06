@@ -12,14 +12,24 @@ import FoldingCell
 class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var category = -1
+    var subCategory = -1
     let kCloseCellHeight: CGFloat = 117 //double space + height of closed
     let kOpenCellHeight: CGFloat = 330 //height + 9
-    let kRowsCount = 5
+    var kRowsCount = 5
     var cellHeights: [CGFloat] = []
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //print("Cat1 = \(category) Cat2 = \(subCategory)")
+        if (category <= 3 && category >= 0) {
+            kRowsCount = OfflineClient.sharedInstance.foodCategoryArray[category][subCategory].count
+        } else if (category == 4 || category == 5) {
+            kRowsCount = OfflineClient.sharedInstance.drinkCategoryArray[category - 4][subCategory].count
+        }
+        
+        
         tableView.delegate = self
         tableView.dataSource = self
         setup()
@@ -29,6 +39,7 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
         backImageView.image = UIImage(named: "transparentDishBack")
         backImageView.contentMode = .scaleAspectFill
         tableView.backgroundView = backImageView
+        print(subCategory)
     }
     
     override func didReceiveMemoryWarning() {
@@ -89,17 +100,43 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! OrderCell
+        cell.addButton.tag = indexPath.row
+        cell.category = self.category
+        cell.subCategory = self.subCategory
         cell.foreView.layer.cornerRadius = 20
         cell.contView.layer.cornerRadius = 20
         cell.foreView.clipsToBounds = true
         cell.contView.clipsToBounds = true
-        cell.addButton.backgroundColor = UIColor.red
+        cell.addButton.backgroundColor = UIColor.init(red: 162/255, green: 0/255, blue: 19/255, alpha: 1)
+        
+        if category >= 0 && category <= 3 {
+            cell.titleLabel.text = OfflineClient.sharedInstance.foodCategoryArray[category][subCategory][indexPath.row].food.uppercased()
+            cell.descrLabel.text = OfflineClient.sharedInstance.foodCategoryArray[category][subCategory][indexPath.row].descr
+            cell.priceLabel.text = OfflineClient.sharedInstance.foodCategoryArray[category][subCategory][indexPath.row].price
+            if OfflineClient.sharedInstance.foodCategoryArray[category][subCategory][indexPath.row].nuts == false {
+                cell.nutsLabel.isHidden = true
+            }
+            if !(category == 0 && (subCategory == 1 || subCategory == 5)) {
+                cell.vegLabel.isHidden = true
+            }
+            if OfflineClient.sharedInstance.foodCategoryArray[category][subCategory][indexPath.row].food.lowercased().contains("veg") {
+                cell.vegLabel.isHidden = false
+            }
+        } else if category >= 4 {
+            cell.titleLabel.text = OfflineClient.sharedInstance.drinkCategoryArray[category - 4][subCategory][indexPath.row].drink.uppercased()
+            cell.descrLabel.text = OfflineClient.sharedInstance.drinkCategoryArray[category - 4][subCategory][indexPath.row].descr
+            cell.priceLabel.text = OfflineClient.sharedInstance.drinkCategoryArray[category - 4][subCategory][indexPath.row].price
+            cell.nutsLabel.isHidden = true
+            cell.vegLabel.isHidden = true
+        }
+        
         return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! CategoriesViewController
         destination.category = self.category
+        
     }
     
 

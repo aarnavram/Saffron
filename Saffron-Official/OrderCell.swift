@@ -15,7 +15,18 @@ class OrderCell: FoldingCell {
     @IBOutlet weak var contView: UIView!
     @IBOutlet weak var addButton: UIButton!
     
+    @IBOutlet weak var titleLabel: UILabel!
     
+    @IBOutlet weak var descrLabel: UILabel!
+    
+    @IBOutlet weak var nutsLabel: UILabel!
+    
+    @IBOutlet weak var vegLabel: UILabel!
+    
+    @IBOutlet weak var priceLabel: UILabel!
+    
+    var category: Int = -1
+    var subCategory: Int = -1
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -25,8 +36,8 @@ class OrderCell: FoldingCell {
     */
 
     @IBAction func onAddPressed(_ sender: Any) {
-        
-        print("Tapped")
+        //let sender = sender as! UIButton
+        //print(OfflineClient.sharedInstance.foodCategoryArray[category][subCategory][sender.tag].food)
     }
     
     override func animationDuration(_ itemIndex:NSInteger, type:AnimationType)-> TimeInterval {

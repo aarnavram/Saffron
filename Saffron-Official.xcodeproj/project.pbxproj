@@ -11,6 +11,14 @@
 		A01B803F1EDAC3D90092E8A9 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01B803E1EDAC3D90092E8A9 /* CategoryCollectionViewCell.swift */; };
 		A07D688D1EE5A0B20033103F /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07D688C1EE5A0B20033103F /* OrderViewController.swift */; };
 		A07D688F1EE5A21F0033103F /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07D688E1EE5A21F0033103F /* OrderCell.swift */; };
+		A07D68921EE5F8350033103F /* fusion.json in Resources */ = {isa = PBXBuildFile; fileRef = A07D68911EE5F8350033103F /* fusion.json */; };
+		A07D68941EE600B10033103F /* OfflineClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07D68931EE600B10033103F /* OfflineClient.swift */; };
+		A07D68961EE606E30033103F /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07D68951EE606E30033103F /* Food.swift */; };
+		A07D68981EE607DC0033103F /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07D68971EE607DC0033103F /* Drink.swift */; };
+		A07D689A1EE608210033103F /* indian.json in Resources */ = {isa = PBXBuildFile; fileRef = A07D68991EE608210033103F /* indian.json */; };
+		A07D689E1EE608F80033103F /* chinese.json in Resources */ = {isa = PBXBuildFile; fileRef = A07D689D1EE608F80033103F /* chinese.json */; };
+		A07D68A01EE609000033103F /* desserts.json in Resources */ = {isa = PBXBuildFile; fileRef = A07D689F1EE609000033103F /* desserts.json */; };
+		A07D68A21EE6090D0033103F /* beverages.json in Resources */ = {isa = PBXBuildFile; fileRef = A07D68A11EE6090D0033103F /* beverages.json */; };
 		A09139FC1ED1998E0056FA9C /* SegueFromLeftToRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09139FB1ED1998E0056FA9C /* SegueFromLeftToRight.swift */; };
 		A0A89C061E95C1540058EFAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A89C051E95C1540058EFAB /* AppDelegate.swift */; };
 		A0A89C081E95C1540058EFAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A89C071E95C1540058EFAB /* ViewController.swift */; };
@@ -29,6 +37,14 @@
 		A01B803E1EDAC3D90092E8A9 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		A07D688C1EE5A0B20033103F /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		A07D688E1EE5A21F0033103F /* OrderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
+		A07D68911EE5F8350033103F /* fusion.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fusion.json; sourceTree = "<group>"; };
+		A07D68931EE600B10033103F /* OfflineClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfflineClient.swift; sourceTree = "<group>"; };
+		A07D68951EE606E30033103F /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		A07D68971EE607DC0033103F /* Drink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
+		A07D68991EE608210033103F /* indian.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = indian.json; sourceTree = "<group>"; };
+		A07D689D1EE608F80033103F /* chinese.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chinese.json; sourceTree = "<group>"; };
+		A07D689F1EE609000033103F /* desserts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = desserts.json; sourceTree = "<group>"; };
+		A07D68A11EE6090D0033103F /* beverages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = beverages.json; sourceTree = "<group>"; };
 		A09139FB1ED1998E0056FA9C /* SegueFromLeftToRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueFromLeftToRight.swift; sourceTree = "<group>"; };
 		A0A89C021E95C1540058EFAB /* Saffron-Official.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Saffron-Official.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A89C051E95C1540058EFAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +86,27 @@
 				A07D688E1EE5A21F0033103F /* OrderCell.swift */,
 			);
 			name = "Dishes Page";
+			sourceTree = "<group>";
+		};
+		A07D689B1EE6082B0033103F /* JSON Files */ = {
+			isa = PBXGroup;
+			children = (
+				A07D68911EE5F8350033103F /* fusion.json */,
+				A07D689D1EE608F80033103F /* chinese.json */,
+				A07D68991EE608210033103F /* indian.json */,
+				A07D689F1EE609000033103F /* desserts.json */,
+				A07D68A11EE6090D0033103F /* beverages.json */,
+			);
+			name = "JSON Files";
+			sourceTree = "<group>";
+		};
+		A07D689C1EE6084A0033103F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A07D68951EE606E30033103F /* Food.swift */,
+				A07D68971EE607DC0033103F /* Drink.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		A09DD6081EE3E7B900A528DA /* Custom UI Files */ = {
@@ -127,6 +164,8 @@
 		A0A89C041E95C1540058EFAB /* Saffron-Official */ = {
 			isa = PBXGroup;
 			children = (
+				A07D689C1EE6084A0033103F /* Models */,
+				A07D689B1EE6082B0033103F /* JSON Files */,
 				A07D68901EE5A34D0033103F /* Dishes Page */,
 				A09DD60B1EE3E82600A528DA /* Categories Page */,
 				A09DD60A1EE3E81600A528DA /* Main Option Page */,
@@ -137,6 +176,7 @@
 				A0A89C0C1E95C1540058EFAB /* Assets.xcassets */,
 				A0A89C0E1E95C1540058EFAB /* LaunchScreen.storyboard */,
 				A0A89C111E95C1540058EFAB /* Info.plist */,
+				A07D68931EE600B10033103F /* OfflineClient.swift */,
 			);
 			path = "Saffron-Official";
 			sourceTree = "<group>";
@@ -212,9 +252,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A07D68A01EE609000033103F /* desserts.json in Resources */,
 				A0A89C101E95C1540058EFAB /* LaunchScreen.storyboard in Resources */,
+				A07D68A21EE6090D0033103F /* beverages.json in Resources */,
 				A0A89C0D1E95C1540058EFAB /* Assets.xcassets in Resources */,
 				A0A89C0B1E95C1540058EFAB /* Main.storyboard in Resources */,
+				A07D689A1EE608210033103F /* indian.json in Resources */,
+				A07D68921EE5F8350033103F /* fusion.json in Resources */,
+				A07D689E1EE608F80033103F /* chinese.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,14 +318,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A07D68961EE606E30033103F /* Food.swift in Sources */,
 				A07D688F1EE5A21F0033103F /* OrderCell.swift in Sources */,
 				A07D688D1EE5A0B20033103F /* OrderViewController.swift in Sources */,
 				A0A89C181E95C1FA0058EFAB /* MainViewController.swift in Sources */,
 				A09139FC1ED1998E0056FA9C /* SegueFromLeftToRight.swift in Sources */,
+				A07D68941EE600B10033103F /* OfflineClient.swift in Sources */,
 				A0E7B7D01ED29AF100BCC072 /* CategoriesViewController.swift in Sources */,
 				A0A89C081E95C1540058EFAB /* ViewController.swift in Sources */,
 				A0D19EB51EC78AB700EC5247 /* SegueFromRight.swift in Sources */,
 				A01B803F1EDAC3D90092E8A9 /* CategoryCollectionViewCell.swift in Sources */,
+				A07D68981EE607DC0033103F /* Drink.swift in Sources */,
 				A0A89C061E95C1540058EFAB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
