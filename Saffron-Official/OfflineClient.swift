@@ -17,9 +17,9 @@ class OfflineClient: NSObject {
     var drinkCategoryArray: [[[Drink]]]!
     
     func initArrays() {
-        var subFoodArr = Array(repeating: [Food](), count: 11)
+        let subFoodArr = Array(repeating: [Food](), count: 11)
         foodCategoryArray = Array(repeating: subFoodArr, count: 4)
-        var subDrinkArr = Array(repeating: [Drink](), count: 11)
+        let subDrinkArr = Array(repeating: [Drink](), count: 11)
         drinkCategoryArray = Array(repeating: subDrinkArr, count: 4)
     }
     
