@@ -25,6 +25,11 @@ class OrderCell: FoldingCell {
     
     @IBOutlet weak var priceLabel: UILabel!
     
+    @IBOutlet weak var containerPriceLabel: UILabel!
+    @IBOutlet weak var containerDescrLabel: UILabel!
+    @IBOutlet weak var containerTitleLabel: UILabel!
+    @IBOutlet weak var containerImageLabel: UILabel!
+    @IBOutlet weak var contentViewAddButton: UIButton!
     var category: Int = -1
     var subCategory: Int = -1
     /*
@@ -36,8 +41,12 @@ class OrderCell: FoldingCell {
     */
 
     @IBAction func onAddPressed(_ sender: Any) {
-        //let sender = sender as! UIButton
-        //print(OfflineClient.sharedInstance.foodCategoryArray[category][subCategory][sender.tag].food)
+        let sender = sender as! UIButton
+        if category <= 3 {
+            print(OfflineClient.sharedInstance.foodCategoryArray[category][subCategory][sender.tag])
+        } else {
+            print(OfflineClient.sharedInstance.drinkCategoryArray[category - 4][subCategory][sender.tag])
+        }
     }
     
     override func animationDuration(_ itemIndex:NSInteger, type:AnimationType)-> TimeInterval {

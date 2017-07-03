@@ -17,6 +17,9 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
     let kOpenCellHeight: CGFloat = 330 //height + 9
     var kRowsCount = 5
     var cellHeights: [CGFloat] = []
+    var colorArray = [UIColor.init(red: 226/255, green: 117/255, blue: 41/255, alpha: 1), UIColor.init(red: 61/255, green: 187/255, blue: 62/255, alpha: 1), UIColor.init(red: 143/255, green: 1/255, blue: 2/255, alpha: 1)]
+    var imageLabelArray = ["Ⓘ", "ⓒ", "Ⓕ", "Ⓓ", "Ⓑ", "ⓦ"]
+    
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -112,11 +115,19 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.foreView.clipsToBounds = true
         cell.contView.clipsToBounds = true
         cell.addButton.backgroundColor = UIColor.init(red: 162/255, green: 0/255, blue: 19/255, alpha: 1)
+        cell.contentViewAddButton.backgroundColor = UIColor.init(red: 162/255, green: 0/255, blue: 19/255, alpha: 1)
+        cell.contentViewAddButton.layer.cornerRadius = 20
         
         if category >= 0 && category <= 3 {
+            cell.containerImageLabel.text = imageLabelArray[category]
+            cell.containerImageLabel.textColor = colorArray[Int(arc4random_uniform(3))]
             cell.titleLabel.text = OfflineClient.sharedInstance.foodCategoryArray[category][subCategory][indexPath.row].food.uppercased()
             cell.descrLabel.text = OfflineClient.sharedInstance.foodCategoryArray[category][subCategory][indexPath.row].descr
             cell.priceLabel.text = OfflineClient.sharedInstance.foodCategoryArray[category][subCategory][indexPath.row].price
+            cell.containerTitleLabel.text = OfflineClient.sharedInstance.foodCategoryArray[category][subCategory][indexPath.row].food.uppercased()
+            cell.containerDescrLabel.text = OfflineClient.sharedInstance.foodCategoryArray[category][subCategory][indexPath.row].descr
+            cell.containerPriceLabel.text = OfflineClient.sharedInstance.foodCategoryArray[category][subCategory][indexPath.row].price
+            
             if OfflineClient.sharedInstance.foodCategoryArray[category][subCategory][indexPath.row].nuts == false {
                 cell.nutsLabel.isHidden = true
             }
@@ -127,9 +138,16 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 cell.vegLabel.isHidden = false
             }
         } else if category >= 4 {
+            cell.containerImageLabel.text = imageLabelArray[category]
+            var color = colorArray[Int(arc4random_uniform(3))]
+            cell.containerImageLabel.textColor = color
             cell.titleLabel.text = OfflineClient.sharedInstance.drinkCategoryArray[category - 4][subCategory][indexPath.row].drink.uppercased()
             cell.descrLabel.text = OfflineClient.sharedInstance.drinkCategoryArray[category - 4][subCategory][indexPath.row].descr
             cell.priceLabel.text = OfflineClient.sharedInstance.drinkCategoryArray[category - 4][subCategory][indexPath.row].price
+            cell.containerTitleLabel.text = OfflineClient.sharedInstance.drinkCategoryArray[category - 4][subCategory][indexPath.row].drink.uppercased()
+            cell.containerDescrLabel.text = OfflineClient.sharedInstance.drinkCategoryArray[category - 4][subCategory][indexPath.row].descr
+            cell.containerPriceLabel.text = OfflineClient.sharedInstance.drinkCategoryArray[category - 4][subCategory][indexPath.row].price
+            
             cell.nutsLabel.isHidden = true
             cell.vegLabel.isHidden = true
         }
