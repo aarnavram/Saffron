@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,9 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
         
-        initOfflineClient()
-            
+//        Auth.auth().signInAnonymously { (user: User?, error: Error?) in
+//            if let error = error {
+//                print(error.localizedDescription)
+//            } else {
+//                let isAnonymous = user!.isAnonymous  // true
+//                let uid = user!.uid
+//                AppUser.currentUser = AppUser("12345678")
+//            }
+//        }
+        
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let userDef = UserDefaults.standard
@@ -38,7 +49,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
         }
-        
+        initOfflineClient()
+
         return true
     }
     

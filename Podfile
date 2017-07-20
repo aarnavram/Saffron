@@ -6,9 +6,15 @@ target 'Saffron-Official' do
   use_frameworks!
 
   # Pods for Saffron-Official
+
+  pod 'FoldingCell'
   pod "RazzleDazzle"
   pod 'SCLAlertView'
   pod 'SwiftyJSON'
-  pod 'FoldingCell'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'FirebaseUI/Auth'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
 
 end

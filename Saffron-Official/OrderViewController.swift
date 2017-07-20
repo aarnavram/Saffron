@@ -11,6 +11,7 @@ import FoldingCell
 
 class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var cartButton: UIButton!
     var category = -1
     var subCategory = -1
     let kCloseCellHeight: CGFloat = 117 //double space + height of closed
@@ -43,6 +44,11 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
         backImageView.contentMode = .scaleAspectFill
         tableView.backgroundView = backImageView
         print(subCategory)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        cartButton.titleLabel?.text = "Cart : \(CartViewController.finalCart.count)"
     }
     
     override func didReceiveMemoryWarning() {
@@ -139,7 +145,7 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         } else if category >= 4 {
             cell.containerImageLabel.text = imageLabelArray[category]
-            var color = colorArray[Int(arc4random_uniform(3))]
+            let color = colorArray[Int(arc4random_uniform(3))]
             cell.containerImageLabel.textColor = color
             cell.titleLabel.text = OfflineClient.sharedInstance.drinkCategoryArray[category - 4][subCategory][indexPath.row].drink.uppercased()
             cell.descrLabel.text = OfflineClient.sharedInstance.drinkCategoryArray[category - 4][subCategory][indexPath.row].descr
@@ -156,8 +162,11 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! CategoriesViewController
-        destination.category = self.category
+        if segue.identifier == "dishToCat" {
+            let destination = segue.destination as! CategoriesViewController
+            destination.category = self.category
+        }
+
         
     }
     

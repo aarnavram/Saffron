@@ -43,9 +43,13 @@ class OrderCell: FoldingCell {
     @IBAction func onAddPressed(_ sender: Any) {
         let sender = sender as! UIButton
         if category <= 3 {
-            print(OfflineClient.sharedInstance.foodCategoryArray[category][subCategory][sender.tag])
+            let foodItem = OfflineClient.sharedInstance.foodCategoryArray[category][subCategory][sender.tag]
+            print(foodItem)
+            //CartViewController.finalCart.append(foodItem.food)
         } else {
-            print(OfflineClient.sharedInstance.drinkCategoryArray[category - 4][subCategory][sender.tag])
+            let drinkItem = OfflineClient.sharedInstance.drinkCategoryArray[category - 4][subCategory][sender.tag]
+            print(drinkItem)
+            //CartViewController.finalCart.append(drinkItem.drink)
         }
     }
     

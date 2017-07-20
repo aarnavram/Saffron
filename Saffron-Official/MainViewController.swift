@@ -11,6 +11,7 @@ import UIKit
 class MainViewController: UIViewController {
     
 
+    @IBOutlet weak var cartButton: UIButton!
     @IBOutlet weak var indian: UIImageView!
     @IBOutlet weak var chinese: UIImageView!
     @IBOutlet weak var fusion: UIImageView!
@@ -31,6 +32,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        cartButton.titleLabel?.text = "Cart : \(CartViewController.finalCart.count)"
         imgViewArr.append(indian)
         imgViewArr.append(chinese)
         imgViewArr.append(fusion)
@@ -46,6 +48,12 @@ class MainViewController: UIViewController {
         //self.navigationController?.navigationBar.isHidden = true
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        cartButton.titleLabel?.text = "Cart : \(CartViewController.finalCart.count)"
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
