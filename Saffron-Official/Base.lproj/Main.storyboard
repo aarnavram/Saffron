@@ -28,7 +28,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1177" y="72"/>
+            <point key="canvasLocation" x="-114" y="341"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="Lm6-IM-Zgn">
@@ -250,7 +250,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1908" y="836"/>
+            <point key="canvasLocation" x="1198" y="342"/>
         </scene>
         <!--Cart View Controller-->
         <scene sceneID="9Lt-iQ-Q3E">
@@ -395,7 +395,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yjY-9Z-JW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3335.1999999999998" y="-741.67916041979015"/>
+            <point key="canvasLocation" x="2089" y="-681"/>
         </scene>
         <!--Categories View Controller-->
         <scene sceneID="yu6-Bb-EYG">
@@ -517,7 +517,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PhZ-om-gJv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3193" y="836"/>
+            <point key="canvasLocation" x="2127" y="343"/>
         </scene>
         <!--Order View Controller-->
         <scene sceneID="z8t-uw-8tB">
@@ -784,7 +784,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qlr-S6-alx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4393" y="-238"/>
+            <point key="canvasLocation" x="3417" y="343"/>
         </scene>
     </scenes>
     <resources>
@@ -799,8 +799,8 @@
         <image name="wine1" width="1125" height="306"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2XP-CK-oVA"/>
-        <segue reference="nEM-oR-AnX"/>
-        <segue reference="0CC-IO-Wvy"/>
+        <segue reference="EaG-eQ-fnq"/>
+        <segue reference="xrV-jx-yMI"/>
+        <segue reference="TJh-L0-gGU"/>
     </inferredMetricsTieBreakers>
 </document>
