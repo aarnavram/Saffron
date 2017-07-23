@@ -16,5 +16,6 @@ target 'Saffron-Official' do
   pod 'FirebaseUI/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
+  pod 'Planet'
 
 end

@@ -22,6 +22,7 @@
 		A07D68A01EE609000033103F /* desserts.json in Resources */ = {isa = PBXBuildFile; fileRef = A07D689F1EE609000033103F /* desserts.json */; };
 		A07D68A21EE6090D0033103F /* beverages.json in Resources */ = {isa = PBXBuildFile; fileRef = A07D68A11EE6090D0033103F /* beverages.json */; };
 		A09139FC1ED1998E0056FA9C /* SegueFromLeftToRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09139FB1ED1998E0056FA9C /* SegueFromLeftToRight.swift */; };
+		A09CED041F2460C200B27EBA /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09CED031F2460C200B27EBA /* PhoneViewController.swift */; };
 		A0A89C061E95C1540058EFAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A89C051E95C1540058EFAB /* AppDelegate.swift */; };
 		A0A89C081E95C1540058EFAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A89C071E95C1540058EFAB /* ViewController.swift */; };
 		A0A89C0B1E95C1540058EFAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A89C091E95C1540058EFAB /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		A07D689F1EE609000033103F /* desserts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = desserts.json; sourceTree = "<group>"; };
 		A07D68A11EE6090D0033103F /* beverages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = beverages.json; sourceTree = "<group>"; };
 		A09139FB1ED1998E0056FA9C /* SegueFromLeftToRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueFromLeftToRight.swift; sourceTree = "<group>"; };
+		A09CED031F2460C200B27EBA /* PhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
 		A0A89C021E95C1540058EFAB /* Saffron-Official.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Saffron-Official.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A89C051E95C1540058EFAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0A89C071E95C1540058EFAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 		A0DDD24B1F20717E00830B2E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0DDD24F1F2076C900830B2E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A0E7B7CF1ED29AF100BCC072 /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		A0EE3ACC1F2513B400C5CDAB /* Saffron-Official.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Saffron-Official.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +199,7 @@
 		A0A89C041E95C1540058EFAB /* Saffron-Official */ = {
 			isa = PBXGroup;
 			children = (
+				A0EE3ACC1F2513B400C5CDAB /* Saffron-Official.entitlements */,
 				A055380D1EEB13D300C07946 /* Cart */,
 				A07D689C1EE6084A0033103F /* Models */,
 				A07D689B1EE6082B0033103F /* JSON Files */,
@@ -213,8 +217,17 @@
 				A0A89C111E95C1540058EFAB /* Info.plist */,
 				A0DDD24B1F20717E00830B2E /* GoogleService-Info.plist */,
 				A0DDD24F1F2076C900830B2E /* User.swift */,
+				A0F39E971F24782400D68E05 /* Phone Number Verification */,
 			);
 			path = "Saffron-Official";
+			sourceTree = "<group>";
+		};
+		A0F39E971F24782400D68E05 /* Phone Number Verification */ = {
+			isa = PBXGroup;
+			children = (
+				A09CED031F2460C200B27EBA /* PhoneViewController.swift */,
+			);
+			name = "Phone Number Verification";
 			sourceTree = "<group>";
 		};
 		FBF3D41A97551DDA2BC28258 /* Frameworks */ = {
@@ -262,6 +275,14 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = MLFV6FC582;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -368,6 +389,7 @@
 				A0A89C081E95C1540058EFAB /* ViewController.swift in Sources */,
 				A0D19EB51EC78AB700EC5247 /* SegueFromRight.swift in Sources */,
 				A01B803F1EDAC3D90092E8A9 /* CategoryCollectionViewCell.swift in Sources */,
+				A09CED041F2460C200B27EBA /* PhoneViewController.swift in Sources */,
 				A07D68981EE607DC0033103F /* Drink.swift in Sources */,
 				A0A89C061E95C1540058EFAB /* AppDelegate.swift in Sources */,
 			);
@@ -491,6 +513,7 @@
 			baseConfigurationReference = 5A5965187FFF41233491DE63 /* Pods-Saffron-Official.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Saffron-Official/Saffron-Official.entitlements";
 				DEVELOPMENT_TEAM = MLFV6FC582;
 				INFOPLIST_FILE = "Saffron-Official/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -506,6 +529,7 @@
 			baseConfigurationReference = 2F629D39F0324AB258A75644 /* Pods-Saffron-Official.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Saffron-Official/Saffron-Official.entitlements";
 				DEVELOPMENT_TEAM = MLFV6FC582;
 				INFOPLIST_FILE = "Saffron-Official/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

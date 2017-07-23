@@ -43,6 +43,7 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.10)
+  - Planet (0.2.1)
   - RazzleDazzle (0.1.5)
   - SCLAlertView (0.7.0)
   - SwiftyJSON (3.1.4)
@@ -54,6 +55,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - FirebaseUI/Auth
   - FoldingCell
+  - Planet
   - RazzleDazzle
   - SCLAlertView
   - SwiftyJSON
@@ -70,10 +72,11 @@ SPEC CHECKSUMS:
   FoldingCell: fb189fc746e95b722a1debf8ef455006b70cae2e
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
+  Planet: d1e50cda481a5215e4beb40b0ef825edcea47aea
   RazzleDazzle: 0b1b9fc8ceed04bfdd4b3e8182e98ef7edacd1d1
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: ab8714a8b634b2c3f0ded4c924ed9e4db18b9585
+PODFILE CHECKSUM: 253951b2518c39709f0fa28e8ecb80623ab87479
 
 COCOAPODS: 1.2.0

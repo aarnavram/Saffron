@@ -107,9 +107,7 @@ class ViewController: AnimatedPagingScrollViewController {
         let alertView = SCLAlertView(appearance: appearance)
         let alertViewIcon = UIImage(named: "logoWithoutBG") //Replace the IconImage text with the image name
         alertView.addButton("Yes", backgroundColor: UIColor.black, textColor: UIColor.white, showDurationStatus: false) {
-            let userdefaults = UserDefaults.standard
-            userdefaults.set("appPage", forKey: "vc")
-            userdefaults.synchronize()
+
             
             self.performSegue(withIdentifier: "seg", sender: nil)
         }

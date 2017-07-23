@@ -20,18 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
-//        Auth.auth().signInAnonymously { (user: User?, error: Error?) in
-//            if let error = error {
-//                print(error.localizedDescription)
-//            } else {
-//                let isAnonymous = user!.isAnonymous  // true
-//                let uid = user!.uid
-//                AppUser.currentUser = AppUser("12345678")
-//            }
-//        }
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
         let userDef = UserDefaults.standard
         
         if let launchView = userDef.string(forKey: "vc") {
@@ -53,6 +45,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
+    
+
     
     func initOfflineClient() {
         OfflineClient.sharedInstance.initArrays()
