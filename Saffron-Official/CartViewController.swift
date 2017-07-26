@@ -41,6 +41,10 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if CartViewController.finalCart.count == 0 {
@@ -51,11 +55,20 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         } else {
             
             //FIX TOTAL LABEL TEXT
-            
+            var sum = 0;
+            for item in 0...CartViewController.finalCart.count - 1 {
+                if let drink = CartViewController.finalCart[item] as? Drink {
+                    sum = sum + Int(drink.price.replacingOccurrences(of: "P", with: ""))!
+                } else if let food = CartViewController.finalCart[item] as? Food {
+
+                    sum = sum + Int(food.price.replacingOccurrences(of: "P", with: ""))!
+                }
+            }
             self.tableView.isHidden = false
             self.placeOrderButton.isHidden = false
             self.placeOrderButton.isUserInteractionEnabled = true
             self.emptyLabel.isHidden = true
+            self.totalLabel.text = "Total : P \(sum)"
         }
     }
 
@@ -81,6 +94,9 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func OnXPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
@@ -107,9 +123,12 @@ extension CartViewController {
             cell.titleLabel.text = drink.drink
             cell.priceLabel.text = drink.price
         } else if let food = CartViewController.finalCart[indexPath.row] as? Food {
+
             cell.titleLabel.text = food.food
             cell.priceLabel.text = food.price
         }
+   
+
         return cell
     }
     

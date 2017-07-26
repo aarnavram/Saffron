@@ -9,7 +9,7 @@
 import UIKit
 import FoldingCell
 
-class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CartLabelDelegate {
 
     @IBOutlet weak var cartButton: UIButton!
     var category = -1
@@ -58,6 +58,11 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    func cartCountDidChage() {
+    
+        cartButton.titleLabel?.text = "Cart : \(CartViewController.finalCart.count)"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -113,6 +118,7 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! OrderCell
+        cell.delegate = self
         cell.addButton.tag = indexPath.row
         cell.category = self.category
         cell.subCategory = self.subCategory

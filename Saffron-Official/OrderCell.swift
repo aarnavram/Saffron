@@ -8,6 +8,11 @@
 
 import UIKit
 import FoldingCell
+import SCLAlertView
+
+protocol CartLabelDelegate: class {
+    func cartCountDidChage()
+}
 
 class OrderCell: FoldingCell {
 
@@ -32,6 +37,8 @@ class OrderCell: FoldingCell {
     @IBOutlet weak var contentViewAddButton: UIButton!
     var category: Int = -1
     var subCategory: Int = -1
+    
+    weak var delegate: CartLabelDelegate?
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -41,15 +48,19 @@ class OrderCell: FoldingCell {
     */
 
     @IBAction func onAddPressed(_ sender: Any) {
+        let alert = SCLAlertView()
+        alert.showSuccess("Added", subTitle: "Item Added", closeButtonTitle: nil, duration: 0.5, colorStyle: 1, colorTextButton: 1, circleIconImage: nil, animationStyle: .leftToRight)
         let sender = sender as! UIButton
         if category <= 3 {
             let foodItem = OfflineClient.sharedInstance.foodCategoryArray[category][subCategory][sender.tag]
             print(foodItem)
-            //CartViewController.finalCart.append(foodItem.food)
+            CartViewController.finalCart.append(foodItem)
+            delegate?.cartCountDidChage()
         } else {
             let drinkItem = OfflineClient.sharedInstance.drinkCategoryArray[category - 4][subCategory][sender.tag]
             print(drinkItem)
-            //CartViewController.finalCart.append(drinkItem.drink)
+            CartViewController.finalCart.append(drinkItem)
+            delegate?.cartCountDidChage()
         }
     }
     
