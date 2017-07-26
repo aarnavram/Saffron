@@ -33,6 +33,13 @@ class PhoneViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func alertPopUp(title: String, descr: String, completeText: String) {
+        let appearance = SCLAlertView.SCLAppearance(kCircleHeight: 50, kCircleIconHeight: 50, showCircularIcon: true)
+        let alertView = SCLAlertView(appearance: appearance)
+        let alertIcon = UIImage(named: "logoWithoutBG")
+        alertView.showTitle(title, subTitle: descr, duration: 4, completeText: completeText, style: .warning, colorStyle: 0x000000, colorTextButton: 0xFFFFFF, circleIconImage: alertIcon, animationStyle: .rightToLeft)
+    }
 
 
     
@@ -48,13 +55,12 @@ class PhoneViewController: UIViewController {
     
     
     @IBAction func onGetCodePressed(_ sender: Any) {
-        let alert = SCLAlertView()
         if addCountryButton.titleLabel?.text == "+" {
-            alert.showError("Did not select country", subTitle: "Please press the add button to select a country")
+            alertPopUp(title: "Did not select country", descr: "Please press the add button to select a country", completeText: "OK")
         } else if self.phoneNumberTextField.text == "Enter Phone Number Here" {
-            alert.showError("Enter Phone Number", subTitle: "Please type in your phone number")
+            alertPopUp(title: "Enter Phone Number", descr: "Please type in your phone number", completeText: "OK")
         } else if addCountryButton.titleLabel?.text == "+267" && phoneNumberTextField.text?.characters.count != 8 {
-            alert.showError("Enter Valid Number", subTitle: "Please enter a valid phone number")
+            alertPopUp(title: "Enter Valid Number", descr: "Please enter a valid phone number", completeText: "OK")
         } else {
             finalNumber = finalNumber + phoneNumberTextField.text!
             print(finalNumber)
@@ -63,15 +69,13 @@ class PhoneViewController: UIViewController {
                 if let error = error {
                     print(error.localizedDescription)
                     print("Reached here")
-                    alert.showError("Error", subTitle: "An error occurred, please try again")
+                    self.alertPopUp(title: "Error Occurred", descr: "Please try again", completeText: "OK")
                     return
                 }
                 UserDefaults.standard.setValue(verificationID, forKey: "authVerificationID")
                 self.view.endEditing(true)
-                let appearance = SCLAlertView.SCLAppearance(kCircleHeight: 50, kCircleIconHeight: 50, showCircularIcon: true)
-                let alertView = SCLAlertView(appearance: appearance)
-                let alertViewIcon = UIImage(named: "logoWithoutBG")
-                alertView.showTitle("Enter Code", subTitle: "You will shortly receive a verification code via SMS", duration: nil, completeText: "No", style: .warning, colorStyle: 0x000000, colorTextButton: 0xFFFFFF, circleIconImage: alertViewIcon, animationStyle: .rightToLeft)
+                self.alertPopUp(title: "Entered Code", descr: "You will shortly receive a verification code via SMS", completeText: "OK")
+
             })
         }
     }
@@ -86,6 +90,7 @@ class PhoneViewController: UIViewController {
             Auth.auth().signIn(with: credential, completion: { (user, error) in
                 if let error = error {
                     print(error.localizedDescription)
+                    self.alertPopUp(title: "Error Occurred", descr: "Please try again", completeText: "OK")
                     return
                 } else {
                     let userdefaults = UserDefaults.standard

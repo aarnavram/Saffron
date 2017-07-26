@@ -8,7 +8,12 @@
 
 import UIKit
 
+protocol RemoveDelegate: class {
+    func remove(at index:Int)
+}
 class FinalCartTableViewCell: UITableViewCell {
+    
+    weak var delegate: RemoveDelegate?
 
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -16,6 +21,7 @@ class FinalCartTableViewCell: UITableViewCell {
     
     @IBOutlet weak var outerView: UIView!
     
+    @IBOutlet weak var removeButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +32,9 @@ class FinalCartTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    @IBAction func onRemoveButtonPressed(_ sender: UIButton) {
+        delegate?.remove(at: sender.tag)
     }
 
 }

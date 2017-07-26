@@ -8,9 +8,10 @@
 
 import UIKit
 import FirebaseDatabase
+import SCLAlertView
 
 
-class CartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CartViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     static var finalCart = [Any]()
@@ -47,29 +48,8 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if CartViewController.finalCart.count == 0 {
-            self.tableView.isHidden = true
-            self.totalLabel.text = "Total : P 0"
-            self.placeOrderButton.isHidden = true
-            self.emptyLabel.isHidden = false
-        } else {
-            
-            //FIX TOTAL LABEL TEXT
-            var sum = 0;
-            for item in 0...CartViewController.finalCart.count - 1 {
-                if let drink = CartViewController.finalCart[item] as? Drink {
-                    sum = sum + Int(drink.price.replacingOccurrences(of: "P", with: ""))!
-                } else if let food = CartViewController.finalCart[item] as? Food {
+        configureViews()
 
-                    sum = sum + Int(food.price.replacingOccurrences(of: "P", with: ""))!
-                }
-            }
-            self.tableView.isHidden = false
-            self.placeOrderButton.isHidden = false
-            self.placeOrderButton.isUserInteractionEnabled = true
-            self.emptyLabel.isHidden = true
-            self.totalLabel.text = "Total : P \(sum)"
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -106,10 +86,43 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func configureViews() {
+        if CartViewController.finalCart.count == 0 {
+            self.tableView.isHidden = true
+            self.totalLabel.text = "Total : P 0"
+            self.placeOrderButton.isHidden = true
+            self.emptyLabel.isHidden = false
+        } else {
+            
+            //FIX TOTAL LABEL TEXT
+            var sum = 0;
+            for item in 0...CartViewController.finalCart.count - 1 {
+                if let drink = CartViewController.finalCart[item] as? Drink {
+                    sum = sum + Int(drink.price.replacingOccurrences(of: "P", with: ""))!
+                } else if let food = CartViewController.finalCart[item] as? Food {
+                    
+                    sum = sum + Int(food.price.replacingOccurrences(of: "P", with: ""))!
+                }
+            }
+            self.tableView.isHidden = false
+            self.placeOrderButton.isHidden = false
+            self.placeOrderButton.isUserInteractionEnabled = true
+            self.emptyLabel.isHidden = true
+            self.totalLabel.text = "Total : P \(sum)"
+        }
+    }
+    
+    func alertPopUp(title: String, descr: String) {
+        let appearance = SCLAlertView.SCLAppearance(kCircleHeight: 50, kCircleIconHeight: 50, showCircularIcon: true)
+        let alertView = SCLAlertView(appearance: appearance)
+        let alertIcon = UIImage(named: "logoWithoutBG")
+        alertView.showTitle(title, subTitle: descr, duration: 4, completeText: "OK", style: .warning, colorStyle: 0x000000, colorTextButton: 0xFFFFFF, circleIconImage: alertIcon, animationStyle: .rightToLeft)
+    }
 
 }
 
-extension CartViewController {
+extension CartViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return CartViewController.finalCart.count
@@ -117,14 +130,16 @@ extension CartViewController {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "finalCartTableViewCell", for: indexPath) as! FinalCartTableViewCell
+        cell.removeButton.tag = indexPath.row
+        cell.delegate = self
         cell.outerView.layer.cornerRadius = 10
         cell.backgroundColor = UIColor.clear
+        cell.removeButton.layer.cornerRadius = 10
         if let drink = CartViewController.finalCart[indexPath.row] as? Drink {
-            cell.titleLabel.text = drink.drink
+            cell.titleLabel.text = drink.drink.uppercased()
             cell.priceLabel.text = drink.price
         } else if let food = CartViewController.finalCart[indexPath.row] as? Food {
-
-            cell.titleLabel.text = food.food
+            cell.titleLabel.text = food.food.uppercased()
             cell.priceLabel.text = food.price
         }
    
@@ -132,4 +147,20 @@ extension CartViewController {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let drink = CartViewController.finalCart[indexPath.row] as? Drink {
+            alertPopUp(title: drink.drink, descr: drink.descr)
+        } else if let food = CartViewController.finalCart[indexPath.row] as? Food {
+            alertPopUp(title: food.food, descr: food.descr)
+        }
+    }
+    
+}
+
+extension CartViewController: RemoveDelegate {
+    func remove(at index: Int) {
+        CartViewController.finalCart.remove(at: index)
+        self.tableView.reloadData()
+        configureViews()
+    }
 }

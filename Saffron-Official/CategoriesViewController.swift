@@ -10,6 +10,7 @@ import UIKit
 
 class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var cartLabel: UILabel!
     @IBOutlet weak var cartButton: UIButton!
     var category = -1
     var categoryArray = [[String]]()
@@ -55,7 +56,7 @@ class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICo
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        cartButton.titleLabel?.text = "Cart : \(CartViewController.finalCart.count)"
+        cartLabel.text = "Cart : \(CartViewController.finalCart.count)"
     }
     
 

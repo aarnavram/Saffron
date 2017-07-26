@@ -11,6 +11,7 @@ import UIKit
 class MainViewController: UIViewController {
     
 
+    @IBOutlet weak var cartLabel: UILabel!
     @IBOutlet weak var cartButton: UIButton!
     @IBOutlet weak var indian: UIImageView!
     @IBOutlet weak var chinese: UIImageView!
@@ -32,7 +33,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        cartButton.titleLabel?.text = "Cart : \(CartViewController.finalCart.count)"
+        cartLabel.text = "Cart : \(CartViewController.finalCart.count)"
         imgViewArr.append(indian)
         imgViewArr.append(chinese)
         imgViewArr.append(fusion)
@@ -51,7 +52,7 @@ class MainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        cartButton.titleLabel?.text = "Cart : \(CartViewController.finalCart.count)"
+        cartLabel.text = "Cart : \(CartViewController.finalCart.count)"
     }
     
 

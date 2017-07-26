@@ -49,7 +49,8 @@ class OrderCell: FoldingCell {
 
     @IBAction func onAddPressed(_ sender: Any) {
         let alert = SCLAlertView()
-        alert.showSuccess("Added", subTitle: "Item Added", closeButtonTitle: nil, duration: 0.5, colorStyle: 1, colorTextButton: 1, circleIconImage: nil, animationStyle: .leftToRight)
+        alert.showSuccess("Added", subTitle: "", closeButtonTitle: "Item Added", duration: 0.5, colorStyle: 0, colorTextButton: 0xFFFFFF, circleIconImage: UIImage(named: "logoWithoutBG")!, animationStyle: .leftToRight)
+        
         let sender = sender as! UIButton
         if category <= 3 {
             let foodItem = OfflineClient.sharedInstance.foodCategoryArray[category][subCategory][sender.tag]

@@ -11,6 +11,7 @@ import FoldingCell
 
 class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CartLabelDelegate {
 
+    @IBOutlet weak var cartLabel: UILabel!
     @IBOutlet weak var cartButton: UIButton!
     var category = -1
     var subCategory = -1
@@ -48,7 +49,7 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        cartButton.titleLabel?.text = "Cart : \(CartViewController.finalCart.count)"
+        cartLabel.text = "Cart : \(CartViewController.finalCart.count)"
     }
     
     override func didReceiveMemoryWarning() {
@@ -62,7 +63,7 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func cartCountDidChage() {
     
-        cartButton.titleLabel?.text = "Cart : \(CartViewController.finalCart.count)"
+        cartLabel.text = "Cart : \(CartViewController.finalCart.count)"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
