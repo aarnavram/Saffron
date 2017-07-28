@@ -132,6 +132,7 @@
 			children = (
 				A07D68951EE606E30033103F /* Food.swift */,
 				A07D68971EE607DC0033103F /* Drink.swift */,
+				A0DDD24F1F2076C900830B2E /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -216,7 +217,6 @@
 				A0A89C0E1E95C1540058EFAB /* LaunchScreen.storyboard */,
 				A0A89C111E95C1540058EFAB /* Info.plist */,
 				A0DDD24B1F20717E00830B2E /* GoogleService-Info.plist */,
-				A0DDD24F1F2076C900830B2E /* User.swift */,
 				A0F39E971F24782400D68E05 /* Phone Number Verification */,
 			);
 			path = "Saffron-Official";

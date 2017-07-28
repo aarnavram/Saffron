@@ -103,7 +103,6 @@
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="15"/>
                                         <state key="normal" title="Get Code"/>
                                         <connections>
-                                            <action selector="doneButtonPressed:" destination="tFb-80-Nwb" eventType="touchUpInside" id="Nra-ib-ZyE"/>
                                             <action selector="onGetCodePressed:" destination="tFb-80-Nwb" eventType="touchUpInside" id="m68-LC-ViL"/>
                                         </connections>
                                     </button>

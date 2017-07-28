@@ -19,11 +19,12 @@ class PhoneViewController: UIViewController {
     @IBOutlet weak var getCodeButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
     var finalNumber = ""
-    
+    var userName = ""
     @IBOutlet weak var codeTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        doneButton.isUserInteractionEnabled = false
         getCodeButton.layer.cornerRadius = 8
         doneButton.layer.cornerRadius = 8
         addCountryButton.layer.cornerRadius = 8
@@ -38,7 +39,34 @@ class PhoneViewController: UIViewController {
         let appearance = SCLAlertView.SCLAppearance(kCircleHeight: 50, kCircleIconHeight: 50, showCircularIcon: true)
         let alertView = SCLAlertView(appearance: appearance)
         let alertIcon = UIImage(named: "logoWithoutBG")
-        alertView.showTitle(title, subTitle: descr, duration: 4, completeText: completeText, style: .warning, colorStyle: 0x000000, colorTextButton: 0xFFFFFF, circleIconImage: alertIcon, animationStyle: .rightToLeft)
+        alertView.showTitle(title, subTitle: descr, duration: 6, completeText: completeText, style: .warning, colorStyle: 0x000000, colorTextButton: 0xFFFFFF, circleIconImage: alertIcon, animationStyle: .rightToLeft)
+    }
+    
+    func alertPopUpWithTextField(userUID: String, userPhone:String, title: String, descr: String, completeText: String) {
+        let appearance = SCLAlertView.SCLAppearance(kCircleHeight: 50, kCircleIconHeight: 50, showCircularIcon: true)
+        let alertView = SCLAlertView(appearance: appearance)
+        let alertIcon = UIImage(named: "logoWithoutBG")
+        let text = alertView.addTextField("name")
+        alertView.showTitle(title, subTitle: descr, duration: nil, completeText: nil, style: .warning, colorStyle: 0x000000, colorTextButton: 0xFFFFFF, circleIconImage: alertIcon, animationStyle: .rightToLeft).setDismissBlock {
+            if text.text == "" {
+                self.alertPopUpWithTextField(userUID: userUID, userPhone: userPhone, title: title, descr: descr, completeText: completeText)
+            } else {
+                self.userName = text.text!
+                print(self.userName)
+                let newUser = User.init(uid: userUID, orders: 0, ordersValue: 0.0, mobileNumber: userPhone, username: self.userName)
+                let databaseRef = Database.database().reference().child("users").child(newUser.uid)
+                databaseRef.updateChildValues(newUser.dictValue, withCompletionBlock: { (error, reference) in
+                    if error != nil {
+                        self.alertPopUp(title: "Error Occurred", descr: "Please close the app and try again", completeText: "OK")
+                        return
+                    }
+                })
+                let userdefaults = UserDefaults.standard
+                userdefaults.set("appPage", forKey: "vc")
+                userdefaults.synchronize()
+                self.performSegue(withIdentifier: "finish", sender: nil)
+            }
+        }
     }
 
 
@@ -75,6 +103,7 @@ class PhoneViewController: UIViewController {
                 UserDefaults.standard.setValue(verificationID, forKey: "authVerificationID")
                 self.view.endEditing(true)
                 self.alertPopUp(title: "Entered Code", descr: "You will shortly receive a verification code via SMS", completeText: "OK")
+                self.doneButton.isUserInteractionEnabled = true
 
             })
         }
@@ -90,13 +119,14 @@ class PhoneViewController: UIViewController {
             Auth.auth().signIn(with: credential, completion: { (user, error) in
                 if let error = error {
                     print(error.localizedDescription)
-                    self.alertPopUp(title: "Error Occurred", descr: "Please try again", completeText: "OK")
+                    print("HERE NOW")
+                    self.alertPopUp(title: "Error Occurred", descr: "Please close the app and try again", completeText: "OK")
                     return
                 } else {
-                    let userdefaults = UserDefaults.standard
-                    userdefaults.set("appPage", forKey: "vc")
-                    userdefaults.synchronize()
-                    self.performSegue(withIdentifier: "finish", sender: nil)
+
+                    if let user = user {
+                        self.alertPopUpWithTextField(userUID: user.uid, userPhone: user.phoneNumber!, title: "Enter Name", descr: "Please enter your name in the text field", completeText: "Done")
+                    }
                 }
             })
         }

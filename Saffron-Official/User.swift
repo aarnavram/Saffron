@@ -10,14 +10,24 @@ import Foundation
 import FirebaseAuth
 import Firebase
 
-class AppUser {
-    
-    static var currentUser: AppUser!
+struct User {
     
     var uid: String!
+    var orders: Int!
+    var ordersValue: Double!
+    var mobileNumber: String!
+    var username: String!
     
-    init(_ uid: String) {
+    init(uid: String, orders: Int, ordersValue: Double, mobileNumber: String, username: String) {
         self.uid = uid
+        self.orders = orders
+        self.ordersValue = ordersValue
+        self.mobileNumber = mobileNumber
+        self.username = username
+    }
+    
+    var dictValue: [String: Any] {
+        return ["orders": orders, "ordersValue" : ordersValue, "mobileNumber": mobileNumber, "username": username]
     }
 }
 
