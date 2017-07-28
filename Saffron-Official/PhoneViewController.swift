@@ -11,6 +11,7 @@ import Planet
 import SCLAlertView
 import FirebaseAuth
 import FirebaseDatabase
+import MBProgressHUD
 
 class PhoneViewController: UIViewController {
 
@@ -91,15 +92,16 @@ class PhoneViewController: UIViewController {
             alertPopUp(title: "Enter Valid Number", descr: "Please enter a valid phone number", completeText: "OK")
         } else {
             finalNumber = finalNumber + phoneNumberTextField.text!
-            print(finalNumber)
-            
+            MBProgressHUD.showAdded(to: self.view, animated: true)
             PhoneAuthProvider.provider().verifyPhoneNumber(finalNumber, completion: { (verificationID, error) in
                 if let error = error {
                     print(error.localizedDescription)
                     print("Reached here")
+                    MBProgressHUD.hide(for: self.view, animated: true)
                     self.alertPopUp(title: "Error Occurred", descr: "Please try again", completeText: "OK")
                     return
                 }
+                MBProgressHUD.hide(for: self.view, animated: true)
                 UserDefaults.standard.setValue(verificationID, forKey: "authVerificationID")
                 self.view.endEditing(true)
                 self.alertPopUp(title: "Entered Code", descr: "You will shortly receive a verification code via SMS", completeText: "OK")
@@ -114,16 +116,18 @@ class PhoneViewController: UIViewController {
     }
     
     @IBAction func doneButtonPressed(_ sender: Any) {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         if let verificationID = UserDefaults.standard.string(forKey: "authVerificationID") {
             let credential = PhoneAuthProvider.provider().credential(withVerificationID: verificationID, verificationCode: codeTextField.text!)
             Auth.auth().signIn(with: credential, completion: { (user, error) in
                 if let error = error {
                     print(error.localizedDescription)
                     print("HERE NOW")
+                    MBProgressHUD.hide(for: self.view, animated: true)
                     self.alertPopUp(title: "Error Occurred", descr: "Please close the app and try again", completeText: "OK")
                     return
                 } else {
-
+                    MBProgressHUD.hide(for: self.view, animated: true)
                     if let user = user {
                         self.alertPopUpWithTextField(userUID: user.uid, userPhone: user.phoneNumber!, title: "Enter Name", descr: "Please enter your name in the text field", completeText: "Done")
                     }

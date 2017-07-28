@@ -17,5 +17,6 @@ target 'Saffron-Official' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'Planet'
+  pod 'MBProgressHUD'
 
 end
