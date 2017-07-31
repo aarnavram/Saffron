@@ -54,7 +54,7 @@ class PhoneViewController: UIViewController {
             } else {
                 self.userName = text.text!
                 print(self.userName)
-                let newUser = User.init(uid: userUID, orders: 0, ordersValue: 0.0, mobileNumber: userPhone, username: self.userName)
+                let newUser = User.init(uid: userUID, number_of_orders: 0, ordersValue: 0.0, mobileNumber: userPhone, username: self.userName)
                 let databaseRef = Database.database().reference().child("users").child(newUser.uid)
                 databaseRef.updateChildValues(newUser.dictValue, withCompletionBlock: { (error, reference) in
                     if error != nil {
@@ -129,6 +129,8 @@ class PhoneViewController: UIViewController {
                 } else {
                     MBProgressHUD.hide(for: self.view, animated: true)
                     if let user = user {
+                        UserDefaults.standard.set("\(user.phoneNumber!)", forKey: "phone")
+                        UserDefaults.standard.synchronize()
                         self.alertPopUpWithTextField(userUID: user.uid, userPhone: user.phoneNumber!, title: "Enter Name", descr: "Please enter your name in the text field", completeText: "Done")
                     }
                 }

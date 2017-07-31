@@ -13,21 +13,22 @@ import Firebase
 struct User {
     
     var uid: String!
-    var orders: Int!
+    var orders: [String: Any]?
     var ordersValue: Double!
     var mobileNumber: String!
     var username: String!
+    var numberOfOrders: Int!
     
-    init(uid: String, orders: Int, ordersValue: Double, mobileNumber: String, username: String) {
+    init(uid: String, number_of_orders: Int, ordersValue: Double, mobileNumber: String, username: String) {
         self.uid = uid
-        self.orders = orders
+        self.numberOfOrders = number_of_orders
         self.ordersValue = ordersValue
         self.mobileNumber = mobileNumber
         self.username = username
     }
     
     var dictValue: [String: Any] {
-        return ["orders": orders, "ordersValue" : ordersValue, "mobileNumber": mobileNumber, "username": username]
+        return ["number_of_orders" : numberOfOrders, "ordersValue" : ordersValue, "mobileNumber": mobileNumber, "username": username]
     }
 }
 

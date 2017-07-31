@@ -211,13 +211,13 @@
 				A09DD6081EE3E7B900A528DA /* Custom UI Files */,
 				A0779D761F1150300090D492 /* Cells */,
 				A09430D61F09A62B00FE8D22 /* Services */,
+				A0F39E971F24782400D68E05 /* Phone Number Verification */,
 				A0A89C051E95C1540058EFAB /* AppDelegate.swift */,
 				A0A89C091E95C1540058EFAB /* Main.storyboard */,
 				A0A89C0C1E95C1540058EFAB /* Assets.xcassets */,
 				A0A89C0E1E95C1540058EFAB /* LaunchScreen.storyboard */,
 				A0A89C111E95C1540058EFAB /* Info.plist */,
 				A0DDD24B1F20717E00830B2E /* GoogleService-Info.plist */,
-				A0F39E971F24782400D68E05 /* Phone Number Verification */,
 			);
 			path = "Saffron-Official";
 			sourceTree = "<group>";

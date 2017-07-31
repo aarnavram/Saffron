@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
 import SCLAlertView
 
 
@@ -15,6 +16,7 @@ class CartViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     static var finalCart = [Any]()
+    var sum = 0;
     
     @IBOutlet weak var emptyLabel: UILabel!
     @IBOutlet weak var placeOrderButton: UIButton!
@@ -57,21 +59,71 @@ class CartViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func alertPopUp(title: String, descr: String, completeText: String) {
+        let appearance = SCLAlertView.SCLAppearance(kCircleHeight: 50, kCircleIconHeight: 50, showCircularIcon: true)
+        let alertView = SCLAlertView(appearance: appearance)
+        let alertIcon = UIImage(named: "logoWithoutBG")
+        alertView.showTitle(title, subTitle: descr, duration: 6, completeText: completeText, style: .warning, colorStyle: 0x000000, colorTextButton: 0xFFFFFF, circleIconImage: alertIcon, animationStyle: .rightToLeft)
+    }
+    
     @IBAction func onPressOrderButtonPressed(_ sender: Any) {
-        
-//        let databseRef = Database.database().reference().child(AppUser.currentUser.uid).child("pending")
-//        
-//        databseRef.updateChildValues(["order": CartViewController.finalCart]) { (error : Error?, ref : DatabaseReference) in
-//            if let error = error {
-//                print(error.localizedDescription)
-//            } else {
-//                print(ref)
-//            }
-//        }
-        
-        
-        
-        self.dismiss(animated: true, completion: nil)
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let minutes = calendar.component(.minute, from: date)
+        print(hour)
+        print(minutes)
+        if (hour >= 23) {
+            alertPopUp(title: "Too Late", descr: "Sorry we do not accept orders after 10.30 PM", completeText: "OK")
+            CartViewController.finalCart.removeAll()
+            self.tableView.reloadData()
+        } else if (hour == 22 && minutes >= 30) {
+            alertPopUp(title: "Too Late", descr: "Sorry we do not accept orders after 10.30 PM", completeText: "OK")
+            CartViewController.finalCart.removeAll()
+            self.tableView.reloadData()
+            configureViews()
+        } else {
+            let appearance = SCLAlertView.SCLAppearance(kCircleHeight: 50, kCircleIconHeight: 50, showCircularIcon: true)
+            let alertView = SCLAlertView(appearance: appearance)
+            let alertIcon = UIImage(named: "logoWithoutBG")
+            alertView.addButton("Yes") {
+                let databaseRef = Database.database().reference().child("pending").child(Auth.auth().currentUser!.uid).childByAutoId()
+                var finalUpload = [String]()
+                for item in CartViewController.finalCart {
+                    if let item = item as? Drink {
+                        finalUpload.append(item.drink)
+                    } else if let item = item as? Food {
+                        finalUpload.append(item.food)
+                    }
+                }
+                let phone = UserDefaults.standard.value(forKey: "phone") as? String
+                if let phone = phone {
+                    let finalPost: [String: Any] = ["phone": phone, "actualOrder": finalUpload, "orderValue" : self.sum, "timestamp" : "\(date)"]
+                    databaseRef.updateChildValues(finalPost, withCompletionBlock: { (error, ref) in
+                        if error != nil {
+                            self.alertPopUp(title: "Could not place order", descr: "Please try again or call us up")
+                        } else {
+                            let userRef = Database.database().reference().child("users").child(Auth.auth().currentUser!.uid).child("orders").child(ref.key)
+                            let finalPostForUser: [String: Any] = ["actualOrder": finalUpload, "orderValue" : self.sum, "timestamp" : "\(date)", "status": "Pending"]
+                            userRef.updateChildValues(finalPostForUser, withCompletionBlock: { (errorTwo, dataRef) in
+                                if errorTwo != nil {
+                                    self.alertPopUp(title: "Could not place order", descr: "Please try again or call us up")
+                                } else {
+                                    print(dataRef.key)
+                                }
+                            })
+                        }
+                    })
+                    CartViewController.finalCart.removeAll()
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+            
+            
+            alertView.showTitle("Place order", subTitle: "Are you ready to place your order?", duration: 50, completeText: "No", style: .warning, colorStyle: 0x000000, colorTextButton: 0xFFFFFF, circleIconImage: alertIcon, animationStyle: .rightToLeft).setDismissBlock {
+                //do nothing here
+            }
+        }
     }
 
     @IBAction func OnXPressed(_ sender: Any) {
@@ -94,9 +146,8 @@ class CartViewController: UIViewController {
             self.placeOrderButton.isHidden = true
             self.emptyLabel.isHidden = false
         } else {
-            
+            sum = 0
             //FIX TOTAL LABEL TEXT
-            var sum = 0;
             for item in 0...CartViewController.finalCart.count - 1 {
                 if let drink = CartViewController.finalCart[item] as? Drink {
                     sum = sum + Int(drink.price.replacingOccurrences(of: "P", with: ""))!
