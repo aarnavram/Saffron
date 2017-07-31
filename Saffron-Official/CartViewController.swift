@@ -109,7 +109,7 @@ class CartViewController: UIViewController {
                                 if errorTwo != nil {
                                     self.alertPopUp(title: "Could not place order", descr: "Please try again or call us up")
                                 } else {
-                                    print(dataRef.key)
+                                    self.alertPopUp(title: "Order Pending", descr: "You will shortly receive a text once we start preparing your order!")
                                 }
                             })
                         }
