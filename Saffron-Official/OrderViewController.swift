@@ -121,6 +121,7 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! OrderCell
         cell.delegate = self
         cell.addButton.tag = indexPath.row
+        cell.contentViewAddButton.tag = indexPath.row
         cell.category = self.category
         cell.subCategory = self.subCategory
         cell.foreView.layer.cornerRadius = 20

@@ -54,7 +54,7 @@ class PhoneViewController: UIViewController {
             } else {
                 self.userName = text.text!
                 print(self.userName)
-                let newUser = User.init(uid: userUID, number_of_orders: 0, ordersValue: 0.0, mobileNumber: userPhone, username: self.userName)
+                let newUser = User.init(uid: userUID, number_of_orders: 0, ordersValue: 0.0, mobileNumber: userPhone, username: self.userName, orderHistory: ["none"])
                 let databaseRef = Database.database().reference().child("users").child(newUser.uid)
                 databaseRef.updateChildValues(newUser.dictValue, withCompletionBlock: { (error, reference) in
                     if error != nil {
@@ -106,6 +106,8 @@ class PhoneViewController: UIViewController {
                 self.view.endEditing(true)
                 self.alertPopUp(title: "Entered Code", descr: "You will shortly receive a verification code via SMS", completeText: "OK")
                 self.doneButton.isUserInteractionEnabled = true
+                self.getCodeButton.isUserInteractionEnabled = false
+                self.phoneNumberTextField.isUserInteractionEnabled = false
 
             })
         }

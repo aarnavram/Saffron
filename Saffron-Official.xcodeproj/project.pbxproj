@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		17883A78ABB5E673829EA98D /* Pods_Saffron_Official.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D45CE52F3589A1ABE5C2530 /* Pods_Saffron_Official.framework */; };
 		A01B803F1EDAC3D90092E8A9 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01B803E1EDAC3D90092E8A9 /* CategoryCollectionViewCell.swift */; };
+		A031EA561FB9779700D5DCE2 /* GetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A031EA551FB9779700D5DCE2 /* GetService.swift */; };
 		A055380F1EEB14A700C07946 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A055380E1EEB14A700C07946 /* CartViewController.swift */; };
 		A0779D751F1150270090D492 /* FinalCartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0779D741F1150270090D492 /* FinalCartTableViewCell.swift */; };
 		A07D688D1EE5A0B20033103F /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07D688C1EE5A0B20033103F /* OrderViewController.swift */; };
@@ -40,6 +41,7 @@
 		5A5965187FFF41233491DE63 /* Pods-Saffron-Official.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saffron-Official.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Saffron-Official/Pods-Saffron-Official.debug.xcconfig"; sourceTree = "<group>"; };
 		9D45CE52F3589A1ABE5C2530 /* Pods_Saffron_Official.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Saffron_Official.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01B803E1EDAC3D90092E8A9 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		A031EA551FB9779700D5DCE2 /* GetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetService.swift; sourceTree = "<group>"; };
 		A055380E1EEB14A700C07946 /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		A0779D741F1150270090D492 /* FinalCartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalCartTableViewCell.swift; sourceTree = "<group>"; };
 		A07D688C1EE5A0B20033103F /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				A07D68931EE600B10033103F /* OfflineClient.swift */,
+				A031EA551FB9779700D5DCE2 /* GetService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				A07D68941EE600B10033103F /* OfflineClient.swift in Sources */,
 				A055380F1EEB14A700C07946 /* CartViewController.swift in Sources */,
 				A0DDD2501F2076C900830B2E /* User.swift in Sources */,
+				A031EA561FB9779700D5DCE2 /* GetService.swift in Sources */,
 				A0E7B7D01ED29AF100BCC072 /* CategoriesViewController.swift in Sources */,
 				A0A89C081E95C1540058EFAB /* ViewController.swift in Sources */,
 				A0D19EB51EC78AB700EC5247 /* SegueFromRight.swift in Sources */,

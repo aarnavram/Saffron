@@ -54,12 +54,14 @@ class OrderCell: FoldingCell {
         let sender = sender as! UIButton
         if category <= 3 {
             let foodItem = OfflineClient.sharedInstance.foodCategoryArray[category][subCategory][sender.tag]
-            print(foodItem)
+            print(foodItem.food)
+            print(sender.tag)
             CartViewController.finalCart.append(foodItem)
             delegate?.cartCountDidChage()
         } else {
             let drinkItem = OfflineClient.sharedInstance.drinkCategoryArray[category - 4][subCategory][sender.tag]
-            print(drinkItem)
+            print(drinkItem.drink)
+            print(sender.tag)
             CartViewController.finalCart.append(drinkItem)
             delegate?.cartCountDidChage()
         }

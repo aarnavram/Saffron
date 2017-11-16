@@ -18,17 +18,19 @@ struct User {
     var mobileNumber: String!
     var username: String!
     var numberOfOrders: Int!
+    var orderHistory: [String]!
     
-    init(uid: String, number_of_orders: Int, ordersValue: Double, mobileNumber: String, username: String) {
+    init(uid: String, number_of_orders: Int, ordersValue: Double, mobileNumber: String, username: String, orderHistory: [String]) {
         self.uid = uid
         self.numberOfOrders = number_of_orders
         self.ordersValue = ordersValue
         self.mobileNumber = mobileNumber
         self.username = username
+        self.orderHistory = orderHistory
     }
     
     var dictValue: [String: Any] {
-        return ["number_of_orders" : numberOfOrders, "ordersValue" : ordersValue, "mobileNumber": mobileNumber, "username": username]
+        return ["number_of_orders" : numberOfOrders, "ordersValue" : ordersValue, "mobileNumber": mobileNumber, "username": username, "orderHistory":orderHistory]
     }
 }
 
