@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Book</string>
+        </array>
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Bold</string>
+            <string>AvenirNext-DemiBold</string>
+            <string>AvenirNext-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--phoneVC-->
         <scene sceneID="JUO-34-F2e">
@@ -640,6 +650,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wine List Coming Soon..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfR-ho-MJW">
+                                <rect key="frame" x="-0.5" y="322" width="375" height="23.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" red="0.83912390470504761" green="0.83926850557327271" blue="0.83911478519439697" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qzW-ZX-Eag">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                 <subviews>
@@ -748,12 +764,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="vfR-ho-MJW" firstAttribute="width" secondItem="qzW-ZX-Eag" secondAttribute="width" id="3cW-i3-mL1"/>
                             <constraint firstAttribute="trailing" secondItem="PE6-ig-P74" secondAttribute="trailing" id="CVA-gG-8PF"/>
                             <constraint firstItem="PE6-ig-P74" firstAttribute="top" secondItem="qzW-ZX-Eag" secondAttribute="bottom" id="Ma5-uY-QXO"/>
+                            <constraint firstItem="vfR-ho-MJW" firstAttribute="centerX" secondItem="4nS-E3-PDZ" secondAttribute="centerX" id="PGx-6J-3Hf"/>
                             <constraint firstItem="tXS-zg-HW1" firstAttribute="top" secondItem="PE6-ig-P74" secondAttribute="bottom" id="Rr0-D6-Poz"/>
                             <constraint firstItem="qzW-ZX-Eag" firstAttribute="leading" secondItem="4nS-E3-PDZ" secondAttribute="leading" id="VEB-Ct-Puf"/>
                             <constraint firstItem="qzW-ZX-Eag" firstAttribute="top" secondItem="4nS-E3-PDZ" secondAttribute="top" id="WYQ-XL-HSL"/>
                             <constraint firstItem="PE6-ig-P74" firstAttribute="leading" secondItem="4nS-E3-PDZ" secondAttribute="leading" id="fq3-HS-9Zb"/>
+                            <constraint firstItem="vfR-ho-MJW" firstAttribute="centerY" secondItem="4nS-E3-PDZ" secondAttribute="centerY" id="gm8-vx-vgW"/>
                             <constraint firstAttribute="trailing" secondItem="qzW-ZX-Eag" secondAttribute="trailing" id="izd-sT-0Tp"/>
                         </constraints>
                     </view>
@@ -761,6 +780,7 @@
                         <outlet property="cartButton" destination="H7o-dN-x0v" id="FJs-bC-nSD"/>
                         <outlet property="cartLabel" destination="Px3-LK-afM" id="JIW-EI-dW8"/>
                         <outlet property="categoryCollectionView" destination="PE6-ig-P74" id="EcX-1s-9mj"/>
+                        <outlet property="emptyLabel" destination="vfR-ho-MJW" id="hHy-sP-px9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PhZ-om-gJv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1061,8 +1081,8 @@
         <image name="wine1" width="1125" height="306"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jBc-WX-YMP"/>
-        <segue reference="2XP-CK-oVA"/>
         <segue reference="nEM-oR-AnX"/>
+        <segue reference="MBH-Gw-VwT"/>
+        <segue reference="0CC-IO-Wvy"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,6 +10,7 @@ import UIKit
 
 class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var emptyLabel: UILabel!
     @IBOutlet weak var cartLabel: UILabel!
     @IBOutlet weak var cartButton: UIButton!
     var category = -1
@@ -57,6 +58,12 @@ class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICo
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         cartLabel.text = "Cart : \(CartViewController.finalCart.count)"
+        if category == 5 {
+            self.categoryCollectionView.isHidden = true
+            self.emptyLabel.isHidden = false
+            self.view.backgroundColor = UIColor.black
+            
+        }
     }
     
 
