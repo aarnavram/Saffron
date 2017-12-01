@@ -153,6 +153,8 @@ extension PhoneViewController: CountryPickerViewControllerDelegate {
     
     func countryPickerViewController(_ countryPickerViewController: CountryPickerViewController, didSelectCountry country: Country) {
         addCountryButton.setTitle(country.callingCode, for: .normal)
+        print(finalNumber)
+        self.phoneNumberTextField.text = "Enter Phone Number Here"
         finalNumber = "\(country.callingCode)"
         
         self.dismiss(animated: true, completion: nil)
