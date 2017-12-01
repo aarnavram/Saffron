@@ -100,8 +100,9 @@ class CartViewController: UIViewController {
                             }
                         }
                         let phone = UserDefaults.standard.value(forKey: "phone") as? String
-                        if let phone = phone {
-                            let finalPost: [String: Any] = ["phone": phone, "actualOrder": finalUpload, "orderValue" : self.sum, "timestamp" : "\(date)", "user" : Auth.auth().currentUser!.uid]
+                        let username = UserDefaults.standard.value(forKey: "username") as? String
+                        if let phone = phone, let username = username {
+                            let finalPost: [String: Any] = ["phone": phone, "actualOrder": finalUpload, "orderValue" : self.sum, "timestamp" : "\(date)", "user" : Auth.auth().currentUser!.uid, "username":username]
                             databaseRef.updateChildValues(finalPost, withCompletionBlock: { (error, ref) in
                                 if error != nil {
                                     self.alertPopUp(title: "Could not place order", descr: "Please try again or call us up")
@@ -112,6 +113,8 @@ class CartViewController: UIViewController {
                             })
                             CartViewController.finalCart.removeAll()
                             self.dismiss(animated: true, completion: nil)
+                        } else {
+                            self.alertPopUp(title: "Could not place order", descr: "Please try again or call us up")
                         }
                     }
                     

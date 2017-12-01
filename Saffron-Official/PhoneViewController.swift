@@ -54,6 +54,7 @@ class PhoneViewController: UIViewController {
             } else {
                 self.userName = text.text!
                 print(self.userName)
+                
                 let newUser = User.init(uid: userUID, number_of_orders: 0, ordersValue: 0.0, mobileNumber: userPhone, username: self.userName, orderHistory: ["none"])
                 let databaseRef = Database.database().reference().child("users").child(newUser.uid)
                 databaseRef.updateChildValues(newUser.dictValue, withCompletionBlock: { (error, reference) in
@@ -64,6 +65,7 @@ class PhoneViewController: UIViewController {
                 })
                 let userdefaults = UserDefaults.standard
                 userdefaults.set("appPage", forKey: "vc")
+                userdefaults.set(self.userName, forKey: "username")
                 userdefaults.synchronize()
                 self.performSegue(withIdentifier: "finish", sender: nil)
             }
