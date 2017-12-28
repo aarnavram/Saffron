@@ -103,6 +103,7 @@ class ViewController: AnimatedPagingScrollViewController {
     
     
     func goToApp() {
+        UserDefaults.standard.set(true, forKey: "showCartInfo")
         let appearance = SCLAlertView.SCLAppearance(kCircleHeight: 50, kCircleIconHeight: 50, showCircularIcon: true)
         let alertView = SCLAlertView(appearance: appearance)
         let alertViewIcon = UIImage(named: "logoWithoutBG") //Replace the IconImage text with the image name

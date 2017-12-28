@@ -59,23 +59,26 @@ class MainViewController: UIViewController {
         let appearance = SCLAlertView.SCLAppearance(kCircleHeight: 50, kCircleIconHeight: 50, showCircularIcon: true)
         let alertView = SCLAlertView(appearance: appearance)
         let alertIcon = UIImage(named: "logoWithoutBG")
-        alertView.showTitle("To View Your Order", subTitle: "Click cart button in the top right corner", duration: 5, completeText: "OK", style: .warning, colorStyle: 0x000000, colorTextButton: 0xFFFFFF, circleIconImage: alertIcon, animationStyle: .rightToLeft)
+        alertView.showTitle("To View Your Order", subTitle: "Click the cart button in the top right corner", duration: nil, completeText: "OK", style: .warning, colorStyle: 0x000000, colorTextButton: 0xFFFFFF, circleIconImage: alertIcon, animationStyle: .rightToLeft)
         //alertView.showEdit("LOL", subTitle: "LOL")
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        UserDefaults.standard.set(true, forKey: "showCartInfo")
-//        if let cartInfo = UserDefaults.standard.object(forKey: "showCartInfo") as? Bool {
-//            if cartInfo == true {
-//                cartInfoAlert()
-//                UserDefaults.standard.set(false, forKey: "showCartInfo")
-//                UserDefaults.standard.synchronize()
-//            }
-//            
-//        }
         cartLabel.text = "Cart : \(CartViewController.finalCart.count)"
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let cartInfo = UserDefaults.standard.object(forKey: "showCartInfo") as? Bool {
+            if cartInfo == true {
+                cartInfoAlert()
+                UserDefaults.standard.set(false, forKey: "showCartInfo")
+                UserDefaults.standard.synchronize()
+            }
+            
+        }
     }
     
 
