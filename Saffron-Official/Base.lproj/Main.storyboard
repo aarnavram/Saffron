@@ -224,7 +224,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <segue destination="tFb-80-Nwb" kind="show" identifier="seg" id="hbc-BU-bwy"/>
+                        <segue destination="tFb-80-Nwb" kind="presentation" identifier="seg" id="hbc-BU-bwy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

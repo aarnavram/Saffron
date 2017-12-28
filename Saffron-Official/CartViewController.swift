@@ -25,8 +25,6 @@ class CartViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
-        
         tableView.delegate = self
         tableView.dataSource = self
         let backImageView = UIImageView()
@@ -94,9 +92,9 @@ class CartViewController: UIViewController {
                         var finalUpload = [String]()
                         for item in CartViewController.finalCart {
                             if let item = item as? Drink {
-                                finalUpload.append(item.drink)
+                                finalUpload.append(item.drink.uppercased())
                             } else if let item = item as? Food {
-                                finalUpload.append(item.food)
+                                finalUpload.append(item.food.uppercased())
                             }
                         }
                         let phone = UserDefaults.standard.value(forKey: "phone") as? String

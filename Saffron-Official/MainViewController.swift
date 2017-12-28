@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class MainViewController: UIViewController {
     
@@ -33,6 +34,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         cartLabel.text = "Cart : \(CartViewController.finalCart.count)"
         imgViewArr.append(indian)
         imgViewArr.append(chinese)
@@ -50,8 +52,29 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    
+    
+    func cartInfoAlert() {
+        let appearance = SCLAlertView.SCLAppearance(kCircleHeight: 50, kCircleIconHeight: 50, showCircularIcon: true)
+        let alertView = SCLAlertView(appearance: appearance)
+        let alertIcon = UIImage(named: "logoWithoutBG")
+        alertView.showTitle("To View Your Order", subTitle: "Click cart button in the top right corner", duration: 5, completeText: "OK", style: .warning, colorStyle: 0x000000, colorTextButton: 0xFFFFFF, circleIconImage: alertIcon, animationStyle: .rightToLeft)
+        //alertView.showEdit("LOL", subTitle: "LOL")
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        UserDefaults.standard.set(true, forKey: "showCartInfo")
+//        if let cartInfo = UserDefaults.standard.object(forKey: "showCartInfo") as? Bool {
+//            if cartInfo == true {
+//                cartInfoAlert()
+//                UserDefaults.standard.set(false, forKey: "showCartInfo")
+//                UserDefaults.standard.synchronize()
+//            }
+//            
+//        }
         cartLabel.text = "Cart : \(CartViewController.finalCart.count)"
     }
     
@@ -107,6 +130,7 @@ class MainViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "seg2" {
+            
             let destination = segue.destination as! CategoriesViewController
             destination.category = senderTag
         }

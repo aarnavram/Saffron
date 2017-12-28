@@ -25,6 +25,7 @@ class PhoneViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        codeTextField.isUserInteractionEnabled = false
         doneButton.isUserInteractionEnabled = false
         getCodeButton.layer.cornerRadius = 8
         doneButton.layer.cornerRadius = 8
@@ -93,6 +94,7 @@ class PhoneViewController: UIViewController {
         } else if addCountryButton.titleLabel?.text == "+267" && phoneNumberTextField.text?.characters.count != 8 {
             alertPopUp(title: "Enter Valid Number", descr: "Please enter a valid phone number", completeText: "OK")
         } else {
+            codeTextField.isUserInteractionEnabled = true
             finalNumber = finalNumber + phoneNumberTextField.text!
             MBProgressHUD.showAdded(to: self.view, animated: true)
             PhoneAuthProvider.provider().verifyPhoneNumber(finalNumber, completion: { (verificationID, error) in
